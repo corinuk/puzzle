@@ -1,5 +1,5 @@
 import PropTypes from "prop-types";
-import styles from "./Item.module.css";
+import styles from "components/Item.module.css";
 import { Link } from "react-router-dom";
 
 function Item({ menu, foodImg, place, prevPrice, saledPrice }) {

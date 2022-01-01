@@ -1,5 +1,5 @@
-import Header from "../components/Header";
-import Item from "../components/Item";
+import Header from "components/Header";
+import Item from "components/Item";
 
 function Home() {
   const array = [1, 2, 3, 4, 5];

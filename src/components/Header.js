@@ -1,4 +1,4 @@
-import styles from "./Header.module.css";
+import styles from "components/Header.module.css";
 
 function Header() {
   const { home, loginBtn, category } = styles;
