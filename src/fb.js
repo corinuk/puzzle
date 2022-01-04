@@ -5,6 +5,9 @@ import {
   signInWithEmailAndPassword,
   createUserWithEmailAndPassword,
   onAuthStateChanged,
+  GoogleAuthProvider,
+  signInWithRedirect,
+  getRedirectResult,
 } from "firebase/auth";
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
@@ -27,5 +30,16 @@ const authService = getAuth();
 const createUser = createUserWithEmailAndPassword;
 const signIn = signInWithEmailAndPassword;
 const authStateChanged = onAuthStateChanged;
+const googleAuthProvider = GoogleAuthProvider;
+const loginWithRedirect = signInWithRedirect;
+const getResult = getRedirectResult;
 
-export { authService, createUser, signIn, authStateChanged };
+export {
+  authService,
+  createUser,
+  signIn,
+  authStateChanged,
+  googleAuthProvider,
+  loginWithRedirect,
+  getResult,
+};

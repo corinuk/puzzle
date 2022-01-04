@@ -1,4 +1,11 @@
-import { authService, createUser, signIn } from "fb";
+import {
+  authService,
+  createUser,
+  signIn,
+  googleAuthProvider,
+  loginWithRedirect,
+  getResult,
+} from "fb";
 import { useState } from "react";
 
 function Auth() {
@@ -34,6 +41,28 @@ function Auth() {
     }
   };
   const toggleAccount = () => setNewAccount((prev) => !prev);
+  const clickSocialLogin = async (event) => {
+    const {
+      target: { name },
+    } = event;
+    let provider;
+    if (name === "google") {
+      provider = new googleAuthProvider();
+    }
+    await loginWithRedirect(authService, provider);
+    const result = await getResult(authService);
+    if (result) {
+      const user = result.user;
+      const credential = provider.credentialFromResult(authService, result);
+      const token = credential.accessToken;
+      console.log("getResult(authService).user = ", user);
+      console.log("credential = ", credential);
+      console.log("token = ", token);
+    }
+
+    const operationType = result.operationType;
+    console.log("operationType = ", operationType);
+  };
 
   return (
     <div>
@@ -63,7 +92,9 @@ function Auth() {
       <button onClick={toggleAccount}>
         {newAccount ? "로그인" : "계정이 없으신가요?"}
       </button>
-      <button name="google">continue with google</button>
+      <button name="google" onClick={clickSocialLogin}>
+        continue with google
+      </button>
     </div>
   );
 }

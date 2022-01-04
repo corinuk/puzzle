@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import AppRouter from "components/Router";
-import { authService, authStateChanged } from "../fb";
+import { authService, authStateChanged } from "fb";
 
 function App() {
   // const currentUser = authService.currentUser;
