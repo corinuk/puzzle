@@ -4,7 +4,7 @@ import { authService, authStateChanged } from "fb";
 
 function App() {
   // const currentUser = authService.currentUser;
-  const [loading, setLoading] = useState(false);
+  const [loading, setLoading] = useState(true);
   const [isLoggedIn, setIsLoggedIn] = useState(false);
 
   useEffect(() => {
@@ -16,7 +16,7 @@ function App() {
         } else {
           setIsLoggedIn(false);
         }
-        setLoading(true);
+        setLoading(false);
       },
       (err) => {
         console.error(err);
@@ -29,7 +29,7 @@ function App() {
 
   return (
     <>
-      {loading ? <AppRouter isLoggedIn={isLoggedIn} /> : "Loading..."}
+      {loading ? "Loading..." : <AppRouter isLoggedIn={isLoggedIn} />}
       <footer>&copy; myApp {new Date().getFullYear()}</footer>
     </>
   );

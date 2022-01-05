@@ -2,6 +2,10 @@
   margin-bottom: 30px;
 }
 .category {
-  background-color: blue;
+  background-color: skyblue;
+  cursor: pointer;
+}
+.upload {
+  background-color: red;
   cursor: pointer;
 }

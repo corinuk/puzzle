@@ -1,4 +1,3 @@
-// Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
 import {
   getAuth,
@@ -6,14 +5,13 @@ import {
   createUserWithEmailAndPassword,
   onAuthStateChanged,
   GoogleAuthProvider,
+  FacebookAuthProvider,
   signInWithRedirect,
+  // signInWithPopup,
+  // signInWithEmailLink,
   getRedirectResult,
 } from "firebase/auth";
-// TODO: Add SDKs for Firebase products that you want to use
-// https://firebase.google.com/docs/web/setup#available-libraries
 
-// Your web app's Firebase configuration
-// For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
   apiKey: process.env.REACT_APP_API_KEY,
   authDomain: process.env.REACT_APP_AUTH_DOMAIN,
@@ -24,14 +22,16 @@ const firebaseConfig = {
   measurementId: process.env.REACT_APP_MEASUREMENT_ID,
 };
 
-// Initialize Firebase
 initializeApp(firebaseConfig);
 const authService = getAuth();
 const createUser = createUserWithEmailAndPassword;
 const signIn = signInWithEmailAndPassword;
 const authStateChanged = onAuthStateChanged;
 const googleAuthProvider = GoogleAuthProvider;
+const facebookAuthProvider = FacebookAuthProvider;
 const loginWithRedirect = signInWithRedirect;
+// const loginWithPopup = signInWithPopup;
+// const loginWithEmailLink = signInWithEmailLink;
 const getResult = getRedirectResult;
 
 export {
@@ -40,6 +40,9 @@ export {
   signIn,
   authStateChanged,
   googleAuthProvider,
+  facebookAuthProvider,
   loginWithRedirect,
+  // loginWithPopup,
+  // loginWithEmailLink,
   getResult,
 };
