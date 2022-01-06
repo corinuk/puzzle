@@ -1,11 +1,23 @@
 .home {
   margin-bottom: 30px;
 }
-.category {
+/* .category {
   background-color: skyblue;
   cursor: pointer;
-}
+} */
 .upload {
-  background-color: red;
+  background-color: skyblue;
   cursor: pointer;
+  border: 1px rgb(107, 197, 233) solid;
+  border-radius: 4px;
+  width: 70px;
+  height: 30px;
+}
+.logout {
+  background-color: yellowgreen;
+  cursor: pointer;
+  border: 1px rgb(141, 211, 0) solid;
+  border-radius: 4px;
+  width: 70px;
+  height: 30px;
 }

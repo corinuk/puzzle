@@ -1,12 +1,12 @@
 import GoToPrevPage from "components/GoToPrevPage";
 
-function Food() {
+function UploadPage() {
   return (
     <div>
       <GoToPrevPage />
-      <h1>Food</h1>
+      <h1>UploadPage</h1>
     </div>
   );
 }
 
-export default Food;
+export default UploadPage;

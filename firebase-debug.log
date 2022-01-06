@@ -1,0 +1,94 @@
+[debug] [2022-01-06T06:12:08.600Z] ----------------------------------------------------------------------
+[debug] [2022-01-06T06:12:08.601Z] Command:       /Users/anseong-ug/.nvm/versions/node/v14.17.5/bin/node /Users/anseong-ug/.nvm/versions/node/v14.17.5/bin/firebase init
+[debug] [2022-01-06T06:12:08.602Z] CLI Version:   9.12.1
+[debug] [2022-01-06T06:12:08.602Z] Platform:      darwin
+[debug] [2022-01-06T06:12:08.602Z] Node Version:  v14.17.5
+[debug] [2022-01-06T06:12:08.605Z] Time:          Thu Jan 06 2022 15:12:08 GMT+0900 (대한민국 표준시)
+[debug] [2022-01-06T06:12:08.605Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2022-01-06T06:12:08.612Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2022-01-06T06:12:08.612Z] > authorizing via signed-in user (asu970602@gmail.com)
+[info] 
+     ######## #### ########  ######## ########     ###     ######  ########
+     ##        ##  ##     ## ##       ##     ##  ##   ##  ##       ##
+     ######    ##  ########  ######   ########  #########  ######  ######
+     ##        ##  ##    ##  ##       ##     ## ##     ##       ## ##
+     ##       #### ##     ## ######## ########  ##     ##  ######  ########
+
+You're about to initialize a Firebase project in this directory:
+
+  /Users/anseong-ug/Library/Mobile Documents/com~apple~CloudDocs/Documents/asu/projects/my-app
+
+[info] 
+=== Project Setup
+[info] 
+[info] First, let's associate this project directory with a Firebase project.
+[info] You can create multiple project aliases by running firebase use --add, 
+[info] but for now we'll just set up a default project.
+[info] 
+[debug] [2022-01-06T06:15:33.861Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects pageSize=100
+[debug] [2022-01-06T06:15:34.792Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects 200
+[debug] [2022-01-06T06:15:34.793Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects [omitted]
+[info] i  Using project myapp-fc663 (myApp) 
+[info] 
+=== Firestore Setup
+[debug] [2022-01-06T06:15:40.837Z] > refreshing access token with scopes: ["email","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","openid"]
+[debug] [2022-01-06T06:15:40.838Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
+ <request body omitted>
+[debug] [2022-01-06T06:15:41.127Z] <<< HTTP RESPONSE 200 {"expires":"Mon, 01 Jan 1990 00:00:00 GMT","date":"Thu, 06 Jan 2022 06:15:41 GMT","pragma":"no-cache","cache-control":"no-cache, no-store, max-age=0, must-revalidate","content-type":"application/json; charset=utf-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","server":"scaffolding on HTTPServer2","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[debug] [2022-01-06T06:15:41.179Z] >>> HTTP REQUEST GET https://serviceusage.googleapis.com/v1/projects/myapp-fc663/services/firestore.googleapis.com  
+ 
+[debug] [2022-01-06T06:15:42.494Z] <<< HTTP RESPONSE 200 {"content-type":"application/json; charset=UTF-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","date":"Thu, 06 Jan 2022 06:15:42 GMT","server":"ESF","cache-control":"private","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[debug] [2022-01-06T06:15:42.495Z] >>> HTTP REQUEST GET https://appengine.googleapis.com/v1/apps/myapp-fc663  
+ 
+[debug] [2022-01-06T06:15:42.919Z] <<< HTTP RESPONSE 200 {"content-type":"application/json; charset=UTF-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","date":"Thu, 06 Jan 2022 06:15:42 GMT","server":"ESF","cache-control":"private","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[debug] [2022-01-06T06:15:42.919Z] database_type: CLOUD_FIRESTORE
+[debug] [2022-01-06T06:15:42.921Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2022-01-06T06:15:42.922Z] > authorizing via signed-in user (asu970602@gmail.com)
+[debug] [2022-01-06T06:15:42.922Z] [iam] checking project myapp-fc663 for permissions ["firebase.projects.get"]
+[debug] [2022-01-06T06:15:42.923Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/myapp-fc663:testIamPermissions  
+ {"permissions":["firebase.projects.get"]}
+[debug] [2022-01-06T06:15:43.356Z] <<< HTTP RESPONSE 200 {"content-type":"application/json; charset=UTF-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","date":"Thu, 06 Jan 2022 06:15:43 GMT","server":"ESF","cache-control":"private","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","server-timing":"gfet4t7; dur=130","alt-svc":"h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[info] 
+[info] Firestore Security Rules allow you to define how and when to allow
+[info] requests. You can keep these rules in your project directory
+[info] and publish them with firebase deploy.
+[info] 
+[debug] [2022-01-06T06:15:48.480Z] >>> HTTP REQUEST GET https://firebaserules.googleapis.com/v1/projects/myapp-fc663/releases?pageSize=10&pageToken=  
+ 
+[debug] [2022-01-06T06:15:49.926Z] <<< HTTP RESPONSE 200 {"content-type":"application/json; charset=UTF-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","date":"Thu, 06 Jan 2022 06:15:49 GMT","server":"ESF","cache-control":"private","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[debug] [2022-01-06T06:15:49.926Z] Found ruleset: projects/myapp-fc663/rulesets/01b92a0b-0674-434f-8daf-0775c454577f
+[debug] [2022-01-06T06:15:49.927Z] >>> HTTP REQUEST GET https://firebaserules.googleapis.com/v1/projects/myapp-fc663/rulesets/01b92a0b-0674-434f-8daf-0775c454577f  
+ 
+[debug] [2022-01-06T06:15:51.102Z] <<< HTTP RESPONSE 200 {"content-type":"application/json; charset=UTF-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","date":"Thu, 06 Jan 2022 06:15:51 GMT","server":"ESF","cache-control":"private","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[info] 
+[info] Firestore indexes allow you to perform complex queries while
+[info] maintaining performance that scales with the size of the result
+[info] set. You can keep index definitions in your project directory
+[info] and publish them with firebase deploy.
+[info] 
+[debug] [2022-01-06T06:15:52.135Z] >>> HTTP REQUEST GET https://firestore.googleapis.com/v1/projects/myapp-fc663/databases/(default)/collectionGroups/-/indexes  
+ 
+[debug] [2022-01-06T06:15:52.136Z] >>> HTTP REQUEST GET https://firestore.googleapis.com/v1/projects/myapp-fc663/databases/(default)/collectionGroups/-/fields?filter=indexConfig.usesAncestorConfig=false  
+ 
+[debug] [2022-01-06T06:15:52.392Z] <<< HTTP RESPONSE 200 {"content-type":"application/json; charset=UTF-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","date":"Thu, 06 Jan 2022 06:15:52 GMT","server":"ESF","cache-control":"private","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[debug] [2022-01-06T06:15:52.505Z] <<< HTTP RESPONSE 200 {"content-type":"application/json; charset=UTF-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","date":"Thu, 06 Jan 2022 06:15:52 GMT","server":"ESF","cache-control":"private","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[info] 
+=== Hosting Setup
+[info] 
+[info] Your public directory is the folder (relative to your project directory) that
+[info] will contain Hosting assets to be uploaded with firebase deploy. If you
+[info] have a build process for your assets, use your build's output directory.
+[info] 
+[debug] [2022-01-06T06:16:13.016Z] >>> [apiv2][query] GET https://www.gstatic.com/firebasejs/releases.json [none]
+[debug] [2022-01-06T06:16:13.248Z] <<< [apiv2][status] GET https://www.gstatic.com/firebasejs/releases.json 200
+[debug] [2022-01-06T06:16:13.248Z] <<< [apiv2][body] GET https://www.gstatic.com/firebasejs/releases.json {"current":{"version":"9.6.1","browserURL":"https://www.gstatic.com/firebasejs/9.6.1/firebase.js","packageURL":"https://www.gstatic.com/firebasejs/9.6.1/firebase.tgz"},"live":{"version":"9.6","browserURL":"https://www.gstatic.com/firebasejs/live/9.6/firebase.js","packageURL":"https://www.gstatic.com/firebasejs/live/9.6/firebase.tgz"},"components":{"analytics":"https://www.gstatic.com/firebasejs/9.6.1/firebase-analytics.js","app":"https://www.gstatic.com/firebasejs/9.6.1/firebase-app.js","app-check":"https://www.gstatic.com/firebasejs/9.6.1/firebase-app-check.js","auth":"https://www.gstatic.com/firebasejs/9.6.1/firebase-auth.js","auth/cordova":"https://www.gstatic.com/firebasejs/9.6.1/firebase-auth/cordova.js","auth/react-native":"https://www.gstatic.com/firebasejs/9.6.1/firebase-auth/react-native.js","functions":"https://www.gstatic.com/firebasejs/9.6.1/firebase-functions.js","firestore":"https://www.gstatic.com/firebasejs/9.6.1/firebase-firestore.js","firestore/lite":"https://www.gstatic.com/firebasejs/9.6.1/firebase-firestore/lite.js","storage":"https://www.gstatic.com/firebasejs/9.6.1/firebase-storage.js","performance":"https://www.gstatic.com/firebasejs/9.6.1/firebase-performance.js","remote-config":"https://www.gstatic.com/firebasejs/9.6.1/firebase-remote-config.js","messaging":"https://www.gstatic.com/firebasejs/9.6.1/firebase-messaging.js","messaging/sw":"https://www.gstatic.com/firebasejs/9.6.1/firebase-messaging/sw.js","database":"https://www.gstatic.com/firebasejs/9.6.1/firebase-database.js","firestore.memory":"https://www.gstatic.com/firebasejs/9.6.1/firebase-firestore.memory.js"}}
+[info] i  Skipping write of public/index.html 
+[info] 
+[info] i  Detected a .git folder at /Users/anseong-ug/Library/Mobile Documents/com~apple~CloudDocs/Documents/asu/projects/my-app 
+[info] i  Authorizing with GitHub to upload your service account to a GitHub repository's secrets store. 
+[info] 
+[info] Visit this URL on this device to log in:
+[info] https://github.com/login/oauth/authorize?client_id=89cf50f02ac6aaed3484&state=909626420&redirect_uri=http%3A%2F%2Flocalhost%3A9005&scope=read%3Auser%20repo%20public_repo
+[info] 
+[info] Waiting for authentication...
