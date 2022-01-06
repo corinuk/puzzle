@@ -12,6 +12,7 @@ function Item({ menu, foodImg, place, prevPrice, saledPrice }) {
           alt="img"
           className={img}
           src="https://i.stack.imgur.com/BwiAz.png"
+          // src={foodImg}
         />
         <span>{menu}</span>
         <span>{place}</span>

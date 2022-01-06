@@ -13,6 +13,7 @@ function Home() {
           place="place"
           prevPrice={100}
           saledPrice={70}
+          // foodImg={}
         />
       ))}
     </div>
