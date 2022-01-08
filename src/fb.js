@@ -11,6 +11,7 @@ import {
   // signInWithEmailLink,
   getRedirectResult,
 } from "firebase/auth";
+import { getFirestore } from "firebase/firestore";
 
 const firebaseConfig = {
   apiKey: process.env.REACT_APP_API_KEY,
@@ -34,6 +35,8 @@ const loginWithRedirect = signInWithRedirect;
 // const loginWithEmailLink = signInWithEmailLink;
 const getResult = getRedirectResult;
 
+const dbService = getFirestore();
+
 export {
   authService,
   createUser,
@@ -45,4 +48,5 @@ export {
   // loginWithPopup,
   // loginWithEmailLink,
   getResult,
+  dbService,
 };

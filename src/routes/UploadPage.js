@@ -45,7 +45,7 @@ function UploadPage() {
           accept="image/*"
           name="foodImg"
           onChange={onImageUpload}
-        ></input>
+        />
         <input
           name="menu"
           value={menu}

@@ -1,15 +1,16 @@
 import styles from "components/Header.module.css";
-import Logout from "./LogoutBtn";
-import UploadBtn from "./UploadBtn";
+// import Logout from "./LogoutBtn";
+// import UploadBtn from "./UploadBtn";
 
 function Header() {
-  const { home, upload, logout } = styles;
+  const { home } = styles;
+  // const { home, upload, logout } = styles;
 
   return (
     <div className={home}>
       <h1>ssssss</h1>
-      <UploadBtn className={upload} />
-      <Logout className={logout} />
+      {/* <UploadBtn className={upload} /> */}
+      {/* <Logout className={logout} /> */}
     </div>
   );
 }
