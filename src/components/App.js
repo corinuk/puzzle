@@ -36,7 +36,9 @@ function App() {
   return (
     <>
       {loading ? "Loading..." : <AppRouter isLoggedIn={isLoggedIn} />}
-      <footer>&copy; myApp {new Date().getFullYear()}</footer>
+      <footer style={{ marginTop: "50px" }}>
+        &copy; Puzzle {new Date().getFullYear()}
+      </footer>
     </>
   );
 }

@@ -1,0 +1,13 @@
+.foodDiv {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.img {
+  margin-top: 30px;
+  width: 150px;
+  height: 150px;
+}
+label {
+  margin-top: 20px;
+}

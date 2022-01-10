@@ -8,7 +8,7 @@ function Header() {
 
   return (
     <div className={home}>
-      <h1>ssssss</h1>
+      <h1>Puzzle</h1>
       {/* <UploadBtn className={upload} /> */}
       {/* <Logout className={logout} /> */}
     </div>

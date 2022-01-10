@@ -3,6 +3,7 @@ import styles from "components/Item.module.css";
 import { Link } from "react-router-dom";
 
 function Item({
+  id,
   menu,
   place,
   address,
@@ -26,7 +27,19 @@ function Item({
   } = styles;
 
   return (
-    <Link to={`/food`} className={link}>
+    <Link
+      to={`/food`}
+      state={{
+        menu,
+        place,
+        address,
+        prevPrice,
+        saledPrice,
+        deadline,
+        fileURL,
+      }}
+      className={link}
+    >
       <div className={item}>
         <img alt="img" className={img} src={fileURL} />
         <div className={details}>

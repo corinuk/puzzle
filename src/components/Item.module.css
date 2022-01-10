@@ -6,9 +6,8 @@
   margin-bottom: 10px;
 }
 .img {
-  background-color: yellowgreen;
-  width: 100px;
-  height: 100px;
+  width: 120px;
+  height: 120px;
 }
 .details {
   height: 100%;
@@ -20,4 +19,7 @@
 }
 .prevPriceClass {
   margin-top: 5px;
+}
+.deadlineClass {
+  color: red;
 }

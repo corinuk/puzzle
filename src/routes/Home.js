@@ -21,7 +21,6 @@ function Home() {
         setLoading(false);
       }
     );
-    console.log(foods);
   }, []);
 
   return (
