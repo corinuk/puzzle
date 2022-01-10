@@ -1,33 +1,32 @@
 import Header from "components/Header";
 import Item from "components/Item";
 import { dbService } from "fb";
-import { collection, getDocs, query } from "firebase/firestore";
+import {
+  collection,
+  getDocs,
+  onSnapshot,
+  orderBy,
+  query,
+} from "firebase/firestore";
 import { useEffect, useState } from "react";
 
 function Home() {
   const [foods, setFoods] = useState([]);
   const [loading, setLoading] = useState(true);
 
-  const getFoods = async () => {
-    const q = query(collection(dbService, "foods"));
-    const querySnapshot = await getDocs(q);
-    querySnapshot.forEach((doc) => {
-      const foodObj = {
-        ...doc.data(),
-        id: doc.id,
-      };
-      setFoods((prev) =>
-        [foodObj, ...prev].sort(function (a, b) {
-          return b.createdAt - a.createdAt;
-        })
-      );
-    });
-    setLoading(false);
-  };
-
   useEffect(() => {
     setFoods([]);
-    getFoods();
+    onSnapshot(
+      query(collection(dbService, "foods"), orderBy("createdAt", "desc")),
+      (snapshot) => {
+        const foodArr = snapshot.docs.map((doc) => ({
+          id: doc.id,
+          ...doc.data(),
+        }));
+        setFoods(foodArr);
+        setLoading(false);
+      }
+    );
   }, []);
 
   return (
