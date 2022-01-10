@@ -2,7 +2,15 @@ import PropTypes from "prop-types";
 import styles from "components/Item.module.css";
 import { Link } from "react-router-dom";
 
-function Item({ foodImg, menu, place, address, prevPrice, saledPrice }) {
+function Item({
+  menu,
+  place,
+  address,
+  prevPrice,
+  saledPrice,
+  deadline,
+  fileURL,
+}) {
   const {
     link,
     img,
@@ -14,17 +22,13 @@ function Item({ foodImg, menu, place, address, prevPrice, saledPrice }) {
     addressClass,
     prevPriceClass,
     saledPriceClass,
+    deadlineClass,
   } = styles;
 
   return (
     <Link to={`/food`} className={link}>
       <div className={item}>
-        <img
-          alt="img"
-          className={img}
-          src="https://i.stack.imgur.com/BwiAz.png"
-          // src={foodImg}
-        />
+        <img alt="img" className={img} src={fileURL} />
         <div className={details}>
           <span className={`${detail} ${menuClass}`}>{menu}</span>
           <span className={`${detail} ${placeClass}`}>{place}</span>
@@ -34,6 +38,9 @@ function Item({ foodImg, menu, place, address, prevPrice, saledPrice }) {
           </span>
           <span className={`${detail} ${saledPriceClass}`}>
             할인가 : {Number(`${saledPrice}`).toLocaleString("en")}원
+          </span>
+          <span className={`${detail} ${deadlineClass}`}>
+            마감시간 : {deadline}
           </span>
         </div>
       </div>
