@@ -1,5 +1,5 @@
 import styles from "components/ReservationForm.module.css";
-import axios from "axios";
+// import axios from "axios";
 
 function ReservationForm() {
   const { reservationForm, phoneNumClass, time, submitBtn } = styles;
@@ -25,35 +25,35 @@ function ReservationForm() {
     console.log(deadline);
     console.log(`예약 시간 : ${pickupTime}`);
     console.log(`예약자 번호 : ${phoneNum}`);
-    const headers = { "Content-Type": "application/json" };
-    try {
-      const { data } = await axios({
-        method: "post",
-        url: "https://hooks.slack.com/services/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",
-        headers,
-        data: {
-          blocks: [
-            {
-              type: "section",
-              text: {
-                type: "mrkdwn",
-                menu,
-                place,
-                address,
-                prevPrice,
-                saledPrice,
-                deadline,
-                pickupTime: `예약 시간 : ${pickupTime}`,
-                phoneNum: `예약자 번호 : ${phoneNum}`,
-              },
-            },
-          ],
-        },
-      });
-      return data;
-    } catch (err) {
-      console.error(err);
-    }
+    // const headers = { "Content-Type": "application/json" };
+    // try {
+    //   const { data } = await axios({
+    //     method: "post",
+    //     url: "https://hooks.slack.com/services/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",
+    //     headers,
+    //     data: {
+    //       blocks: [
+    //         {
+    //           type: "section",
+    //           text: {
+    //             type: "mrkdwn",
+    //             menu,
+    //             place,
+    //             address,
+    //             prevPrice,
+    //             saledPrice,
+    //             deadline,
+    //             pickupTime: `예약 시간 : ${pickupTime}`,
+    //             phoneNum: `예약자 번호 : ${phoneNum}`,
+    //           },
+    //         },
+    //       ],
+    //     },
+    //   });
+    //   return data;
+    // } catch (err) {
+    //   console.error(err);
+    // }
   };
 
   return (
