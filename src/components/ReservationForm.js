@@ -1,5 +1,5 @@
+import axios from "axios";
 import styles from "components/ReservationForm.module.css";
-// import axios from "axios";
 
 function ReservationForm() {
   const { reservationForm, phoneNumClass, time, submitBtn } = styles;
@@ -9,6 +9,13 @@ function ReservationForm() {
     const {
       target: { parentNode },
     } = event;
+    const present = new Date();
+    const year = present.getFullYear();
+    const month = present.getMonth() + 1;
+    const day = present.getDate();
+    const hour = present.getHours();
+    const minute = present.getMinutes();
+    const second = present.getSeconds();
     const menu = parentNode.parentNode.children[2].innerHTML;
     const place = parentNode.parentNode.children[3].innerHTML;
     const address = parentNode.parentNode.children[4].innerHTML;
@@ -17,43 +24,24 @@ function ReservationForm() {
     const deadline = parentNode.parentNode.children[7].innerHTML;
     const pickupTime = parentNode[1].value;
     const phoneNum = parentNode[0].value;
-    console.log(menu);
-    console.log(place);
-    console.log(address);
-    console.log(prevPrice);
-    console.log(saledPrice);
-    console.log(deadline);
-    console.log(`예약 시간 : ${pickupTime}`);
-    console.log(`예약자 번호 : ${phoneNum}`);
-    // const headers = { "Content-Type": "application/json" };
-    // try {
-    //   const { data } = await axios({
-    //     method: "post",
-    //     url: "https://hooks.slack.com/services/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",
-    //     headers,
-    //     data: {
-    //       blocks: [
-    //         {
-    //           type: "section",
-    //           text: {
-    //             type: "mrkdwn",
-    //             menu,
-    //             place,
-    //             address,
-    //             prevPrice,
-    //             saledPrice,
-    //             deadline,
-    //             pickupTime: `예약 시간 : ${pickupTime}`,
-    //             phoneNum: `예약자 번호 : ${phoneNum}`,
-    //           },
-    //         },
-    //       ],
-    //     },
-    //   });
-    //   return data;
-    // } catch (err) {
-    //   console.error(err);
-    // }
+
+    const url = process.env.REACT_APP_SLACK_WEBHOOK_URL;
+    const data = {
+      text: `${year}년${month}월${day}일 ${hour}:${minute}:${second}\n${menu}\n${place}\n${address}\n${prevPrice}\n${saledPrice}\n${deadline}\n${pickupTime}\n${phoneNum}`,
+    };
+    let res = await axios.post(url, JSON.stringify(data), {
+      withCredentials: false,
+      transformRequest: [
+        (data) => {
+          return data;
+        },
+      ],
+    });
+    if (res.status === 200) {
+      alert("예약 성공!");
+    } else {
+      alert("오류가 발생했습니다 ㅠㅠ");
+    }
   };
 
   return (
