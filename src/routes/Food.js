@@ -8,6 +8,7 @@ function Food() {
   const {
     state: { menu, place, address, prevPrice, saledPrice, deadline, fileURL },
   } = location;
+
   const {
     foodDiv,
     img,

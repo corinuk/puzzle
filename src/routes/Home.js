@@ -52,7 +52,6 @@ function Home() {
                 saledPrice={Number(saledPrice)}
                 deadline={deadline}
                 fileURL={fileURL}
-                // foodImg={}
               />
             )
           );

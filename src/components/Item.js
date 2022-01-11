@@ -3,7 +3,6 @@ import styles from "components/Item.module.css";
 import { Link } from "react-router-dom";
 
 function Item({
-  id,
   menu,
   place,
   address,
