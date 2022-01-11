@@ -45,7 +45,7 @@ function ReservationForm() {
   };
 
   return (
-    <form className={reservationForm} onSubmit={onSubmit} method="GET">
+    <form className={reservationForm} onSubmit={onSubmit}>
       <label>휴대폰 번호를 입력해주세요 ( - 제외 )</label>
       <input
         required
