@@ -32,7 +32,8 @@ function ReservationForm() {
     let res = await axios.post(url, JSON.stringify(data), {
       withCredentials: false,
       transformRequest: [
-        (data) => {
+        (data, headers) => {
+          //   delete headers.post["Content-type"];
           return data;
         },
       ],
