@@ -29,7 +29,7 @@ function ReservationForm() {
     const data = {
       text: `${year}년${month}월${day}일 ${hour}:${minute}:${second}\n${menu}\n${place}\n${address}\n${prevPrice}\n${saledPrice}\n${deadline}\n${pickupTime}\n${phoneNum}`,
     };
-    let res = await axios.post(url, JSON.stringify(data), {
+    await axios.put(url, JSON.stringify(data), {
       headers: {
         "Content-Type": "application/json",
       },
@@ -40,15 +40,10 @@ function ReservationForm() {
         },
       ],
     });
-    if (res.status === 200) {
-      alert("예약 성공!");
-    } else {
-      alert("오류가 발생했습니다 ㅠㅠ");
-    }
   };
 
   return (
-    <form className={reservationForm} onSubmit={onSubmit}>
+    <form className={reservationForm} onSubmit={onSubmit} method="POST">
       <label>휴대폰 번호를 입력해주세요 ( - 제외 )</label>
       <input
         required
