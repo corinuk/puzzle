@@ -33,7 +33,7 @@ function ReservationForm() {
       withCredentials: false,
       transformRequest: [
         (data, headers) => {
-          //   delete headers.post["Content-type"];
+          delete headers.post["Content-type"];
           return data;
         },
       ],
