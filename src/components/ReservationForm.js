@@ -30,10 +30,12 @@ function ReservationForm() {
       text: `${year}년${month}월${day}일 ${hour}:${minute}:${second}\n${menu}\n${place}\n${address}\n${prevPrice}\n${saledPrice}\n${deadline}\n${pickupTime}\n${phoneNum}`,
     };
     let res = await axios.post(url, JSON.stringify(data), {
-      withCredentials: false,
+      headers: {
+        "Content-Type": "application/json",
+      },
+      withCredentials: true,
       transformRequest: [
-        (data, headers) => {
-          delete headers.post["Content-type"];
+        (data) => {
           return data;
         },
       ],

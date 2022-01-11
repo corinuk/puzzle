@@ -18,7 +18,7 @@ function AppRouter({ isLoggedIn }) {
       <Routes>
         {isLoggedIn ? (
           <>
-            <Route path="/" element={<Home />} />
+            <Route path="/" exact={true} element={<Home />} />
             <Route path="/food" element={<Food />} />
             <Route path="/upload" element={<UploadPage />} />
             <Route path="*" element={<Navigate to="/" replace />} />
