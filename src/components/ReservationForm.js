@@ -30,8 +30,9 @@ function ReservationForm() {
       text: `${year}년${month}월${day}일 ${hour}:${minute}:${second}\n${menu}\n${place}\n${address}\n${prevPrice}\n${saledPrice}\n${deadline}\n${pickupTime}\n${phoneNum}`,
     };
     const url = process.env.REACT_APP_SLACK_WEBHOOK_URL;
+    console.log("404 ???");
     const res = await axios.post(url, JSON.stringify(data), {
-      withCredentials: false,
+      withCredentials: true,
       transformRequest: [
         (data) => {
           return data;
