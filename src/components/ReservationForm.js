@@ -53,7 +53,14 @@ function ReservationForm() {
   };
 
   return (
-    <form className={reservationForm} onSubmit={onSubmit} method="POST">
+    <form
+      className={reservationForm}
+      onSubmit={onSubmit}
+      method="POST"
+      netlify
+      data-netlify="true"
+      data-netlify-honeypot="bot-field"
+    >
       <label>휴대폰 번호를 입력해주세요 ( - 제외 )</label>
       <input
         required
