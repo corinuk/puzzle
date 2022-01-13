@@ -59,7 +59,7 @@ function ReservationForm() {
       method="POST"
       data-netlify="true"
     >
-      <input type="hidden" name="form-name" value="contact" />
+      <input type="hidden" name="form-name" value="Contact" />
       <label>휴대폰 번호를 입력해주세요 ( - 제외 )</label>
       <input
         required
