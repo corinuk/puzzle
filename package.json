@@ -1,6 +1,6 @@
 {
   "proxy": "https://hooks.slack.com",
-  "homepage": "https://corinuk.github.io/puzzle",
+  "homepage": "https://frosty-neumann-cfddf9.netlify.app/",
   "name": "puzzle",
   "version": "0.1.2",
   "private": true,
