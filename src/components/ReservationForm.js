@@ -26,30 +26,31 @@ function ReservationForm() {
     const phoneNum = parentNode.parentNode[0].value;
 
     const data = `${year}년${month}월${day}일 ${hour}:${minute}:${second}\n${menu}\n${place}\n${address}\n${prevPrice}\n${saledPrice}\n${deadline}\n${pickupTime}\n${phoneNum}`;
-    const url = process.env.REACT_APP_SLACK_WEBHOOK_URL;
-    try {
-      const result = await axios({
-        method: "post",
-        url,
-        headers: {
-          "Content-Type": "application/x-www-form-urlencoded",
-        },
-        data: {
-          blocks: [
-            {
-              type: "section",
-              text: {
-                type: "mrkdwn",
-                text: data,
-              },
-            },
-          ],
-        },
-      });
-      return result;
-    } catch (err) {
-      console.error(err);
-    }
+    console.log(data);
+    // const url = process.env.REACT_APP_SLACK_WEBHOOK_URL;
+    // try {
+    //   const result = await axios({
+    //     method: "post",
+    //     url,
+    //     headers: {
+    //       "Content-Type": "application/x-www-form-urlencoded",
+    //     },
+    //     data: {
+    //       blocks: [
+    //         {
+    //           type: "section",
+    //           text: {
+    //             type: "mrkdwn",
+    //             text: data,
+    //           },
+    //         },
+    //       ],
+    //     },
+    //   });
+    //   return result;
+    // } catch (err) {
+    //   console.error(err);
+    // }
   };
 
   return (
@@ -58,30 +59,34 @@ function ReservationForm() {
       className={reservationForm}
       onSubmit={onSubmit}
       method="POST"
-      data-netlify={true}
+      data-netlify="true"
       action="/"
     >
       <input type="hidden" name="contact" value="contact" />
       <p>
-        <label htmlFor="phone">휴대폰 번호를 입력해주세요 ( - 제외 )</label>
-        <br />
-        <input
-          name="phone"
-          required
-          id="phone"
-          type="number"
-          placeholder="휴대폰 번호"
-          className={phoneNumClass}
-        />
+        <label htmlFor="phone">
+          휴대폰 번호를 입력해주세요 ( - 제외 )
+          <br />
+          <input
+            name="phone"
+            required
+            id="phone"
+            type="number"
+            placeholder="휴대폰 번호"
+            className={phoneNumClass}
+          />
+        </label>
       </p>
       <p>
-        <label htmlFor="time">픽업하실 시간을 입력해주세요</label>
-        <br />
-        <select name="time" id="time" className={time}>
-          <option>10분뒤</option>
-          <option>20분뒤</option>
-          <option>30분뒤</option>
-        </select>
+        <label htmlFor="time">
+          픽업하실 시간을 입력해주세요
+          <br />
+          <select name="time" id="time" className={time}>
+            <option>10분뒤</option>
+            <option>20분뒤</option>
+            <option>30분뒤</option>
+          </select>
+        </label>
       </p>
       <p>
         <input
