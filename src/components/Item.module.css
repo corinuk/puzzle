@@ -1,25 +1,81 @@
 .link {
   text-decoration: none;
 }
+/* 전체적인 게시물 박스에 속성 부여 */
 .item {
   display: flex;
-  margin-bottom: 10px;
+  background-color: white;
+  padding: 20px;
 }
+/* 이미지에 속성 부여 */
 .img {
-  width: 120px;
-  height: 120px;
+  width: 150px;
+  height: 150px;
+  min-width: 150px;
+  border: 1px solid rgb(173, 170, 170);
+  border-radius: 20px;
 }
+
+/* 메뉴 텍스트 박스 전체에 속성 부여 */
 .details {
-  height: 100%;
+  padding: 5px;
+  padding-left: 30px;
+  padding-top: 0;
+  width: 180px;
+  min-width: 180px;
+  height: 150px;
   display: flex;
+  background-color: white;
   flex-direction: column;
 }
-.detail {
+
+/* 아래부터 게시물의 font속성부여 */
+.menuClass {
   color: black;
+  font-size: 18px;
+  font-weight: 800;
+  height: 27px;
+  margin: 0;
 }
+
+.placeClass {
+  color: black;
+  font-size: 10px;
+  font-weight: 340;
+  margin-top: 2px;
+}
+
+.addressClass {
+  color: gray;
+  font-size: 5px;
+  font-weight: 500;
+  margin-bottom: 10px;
+}
+
+/* 원가에 속성부여 */
 .prevPriceClass {
-  margin-top: 5px;
+  color: black;
+  font-weight: 440;
+  height: 20px;
+  font-size: 14px;
+  text-decoration: line-through;
+  text-decoration-style: double;
+  text-decoration-color: rgb(216, 54, 14);
+  text-decoration-thickness: 1.5px;
 }
+
+/* 할인가에 속성부여 */
+.saledPriceClass {
+  color: black;
+  font-size: 17px;
+  font-weight: 550;
+  height: 20;
+  margin-top: 2px;
+}
+/* 마감시간에 속성부여 */
 .deadlineClass {
-  color: red;
+  color: black;
+  font-size: 10px;
+  font-weight: 400;
+  margin-top: 7px;
 }

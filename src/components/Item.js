@@ -1,6 +1,9 @@
 import PropTypes from "prop-types";
 import styles from "components/Item.module.css";
 import { Link } from "react-router-dom";
+import Stack from "react-bootstrap/Stack";
+import Container from "react-bootstrap/Container";
+import Row from "react-bootstrap/Row";
 
 function Item({
   menu,
@@ -16,7 +19,6 @@ function Item({
     img,
     item,
     details,
-    detail,
     menuClass,
     placeClass,
     addressClass,
@@ -39,23 +41,29 @@ function Item({
       }}
       className={link}
     >
-      <div className={item}>
-        <img alt="img" className={img} src={fileURL} />
-        <div className={details}>
-          <span className={`${detail} ${menuClass}`}>{menu}</span>
-          <span className={`${detail} ${placeClass}`}>{place}</span>
-          <span className={`${detail} ${addressClass}`}>{address}</span>
-          <span className={`${detail} ${prevPriceClass}`}>
-            원가 : {Number(`${prevPrice}`).toLocaleString("en")}원
-          </span>
-          <span className={`${detail} ${saledPriceClass}`}>
-            할인가 : {Number(`${saledPrice}`).toLocaleString("en")}원
-          </span>
-          <span className={`${detail} ${deadlineClass}`}>
-            마감시간 : {deadline}
-          </span>
-        </div>
-      </div>
+      <Stack>
+        <Container>
+          <Row>
+            <Container className={item}>
+              <img alt="img" className={img} src={fileURL} />
+              <div className={details}>
+                <span className={`${menuClass}`}>{menu}</span>
+                <span className={`${placeClass}`}>{place}</span>
+                <span className={`${addressClass}`}>{address}</span>
+                <span className={`${prevPriceClass}`}>
+                  원가 : {Number(`${prevPrice}`).toLocaleString("en")}원
+                </span>
+                <span className={`${saledPriceClass}`}>
+                  할인가 : {Number(`${saledPrice}`).toLocaleString("en")}원
+                </span>
+                <span className={`${deadlineClass}`}>
+                  마감시간 : {deadline}
+                </span>
+              </div>
+            </Container>
+          </Row>
+        </Container>
+      </Stack>
     </Link>
   );
 }

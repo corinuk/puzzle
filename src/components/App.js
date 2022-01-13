@@ -35,7 +35,17 @@ function App() {
   return (
     <>
       {loading ? "Loading..." : <AppRouter isLoggedIn={isLoggedIn} />}
-      <footer style={{ marginTop: "50px" }}>
+      <footer
+        style={{
+          fontSize: "10px",
+          fontWeight: "300",
+          fontStyle: "italic",
+          marginTop: "5px",
+          marginLeft: "15px",
+          borderTop: "1px black solid",
+          margin: "1px 17px 0px 17px",
+        }}
+      >
         &copy; Puzzle {new Date().getFullYear()}
       </footer>
     </>
