@@ -11,9 +11,12 @@ function ReservationForm({
 }) {
   const { reservationForm, phoneNumClass, time, submitBtn } = styles;
 
+  const moveToSuccess = () => {
+    window.location.href = "https://frosty-neumann-cfddf9.netlify.app/success";
+  };
   const onSubmit = (event) => {
     event.preventDefault();
-    window.location.href = "https://frosty-neumann-cfddf9.netlify.app/success";
+    window.onhashchange = moveToSuccess();
   };
 
   return (
