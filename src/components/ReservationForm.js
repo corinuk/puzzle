@@ -32,7 +32,7 @@ function ReservationForm() {
         method: "post",
         url,
         headers: {
-          "Content-Type": "application/json",
+          "Content-Type": "application/x-www-form-urlencoded",
         },
         data: {
           blocks: [
@@ -60,6 +60,7 @@ function ReservationForm() {
       netlify
       data-netlify="true"
       data-netlify-honeypot="bot-field"
+      data-netlify-recaptcha="true"
     >
       <label>휴대폰 번호를 입력해주세요 ( - 제외 )</label>
       <input
