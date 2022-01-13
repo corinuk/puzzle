@@ -32,7 +32,7 @@ function ReservationForm() {
         method: "post",
         url,
         headers: {
-          "Content-Type": "application/x-www-form-urlencoded",
+          "Content-Type": "json",
         },
         data: {
           blocks: [
