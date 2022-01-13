@@ -1,10 +1,5 @@
 import React from "react";
-import {
-  authService,
-  googleAuthProvider,
-  facebookAuthProvider,
-  loginWithRedirect,
-} from "fb";
+import { authService, googleAuthProvider, loginWithRedirect } from "fb";
 
 // function Auth({ kakaoAuthUrl }) {
 function Auth() {
@@ -15,8 +10,6 @@ function Auth() {
     let provider;
     if (name === "google") {
       provider = new googleAuthProvider();
-    } else if (name === "facebook") {
-      provider = new facebookAuthProvider();
     }
 
     await loginWithRedirect(authService, provider);
