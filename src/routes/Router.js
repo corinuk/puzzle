@@ -10,9 +10,9 @@ import UploadPage from "routes/UploadPage";
 import Auth from "routes/Auth";
 
 function AppRouter({ isLoggedIn }) {
-  const REST_API_KEY = `cf1ae7941701d4817a836fa50b23bb5c`;
-  const REDIRECT_URI = "https://localhost:3000/oauth/kakao/callback";
-  const KAKAO_AUTH_URL = `https://kauth.kakao.com/oauth/authorize?client_id=${REST_API_KEY}&redirect_uri=${REDIRECT_URI}&response_type=code`;
+  // const REST_API_KEY = `cf1ae7941701d4817a836fa50b23bb5c`;
+  // const REDIRECT_URI = "https://localhost:3000/oauth/kakao/callback";
+  // const KAKAO_AUTH_URL = `https://kauth.kakao.com/oauth/authorize?client_id=${REST_API_KEY}&redirect_uri=${REDIRECT_URI}&response_type=code`;
   return (
     <Router basename={process.env.PUBLIC_URL}>
       <Routes>
@@ -25,7 +25,8 @@ function AppRouter({ isLoggedIn }) {
           </>
         ) : (
           <>
-            <Route path="/" element={<Auth kakaoAuthUrl={KAKAO_AUTH_URL} />} />
+            <Route path="/" element={<Auth />} />
+            {/* <Route path="/" element={<Auth kakaoAuthUrl={KAKAO_AUTH_URL} />} /> */}
             <Route path="*" element={<Navigate to="/" replace />} />
           </>
         )}
