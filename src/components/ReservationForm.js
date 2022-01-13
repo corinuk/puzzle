@@ -54,12 +54,12 @@ function ReservationForm() {
 
   return (
     <form
+      name="contact"
       className={reservationForm}
       onSubmit={onSubmit}
       method="POST"
-      data-netlify="true"
     >
-      <input type="hidden" name="form-name" value="Contact" />
+      <input type="hidden" name="form-name" value="contact" />
       <label>휴대폰 번호를 입력해주세요 ( - 제외 )</label>
       <input
         required
