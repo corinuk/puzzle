@@ -8,6 +8,7 @@ import Home from "routes/Home";
 import Food from "routes/Food";
 import UploadPage from "routes/UploadPage";
 import Auth from "routes/Auth";
+import CompleteReserv from "./CompleteReserv";
 
 function AppRouter({ isLoggedIn }) {
   // const REST_API_KEY = `cf1ae7941701d4817a836fa50b23bb5c`;
@@ -21,6 +22,7 @@ function AppRouter({ isLoggedIn }) {
             <Route path="/" exact={true} element={<Home />} />
             <Route path="/food" element={<Food />} />
             <Route path="/upload" element={<UploadPage />} />
+            <Route path="/success" element={<CompleteReserv />} />
             <Route path="*" element={<Navigate to="/" replace />} />
           </>
         ) : (
