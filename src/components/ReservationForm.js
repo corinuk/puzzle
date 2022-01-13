@@ -11,13 +11,17 @@ function ReservationForm({
 }) {
   const { reservationForm, phoneNumClass, time, submitBtn } = styles;
 
+  const onSubmit = (event) => {
+    event.preventDefault();
+    window.location.href = "https://frosty-neumann-cfddf9.netlify.app/success";
+  };
+
   return (
     <form
       name="contact"
       className={reservationForm}
-      // onSubmit={onSubmit}
+      onSubmit={onSubmit}
       method="POST"
-      action="/success"
       data-netlify="true"
     >
       <input type="hidden" name="form-name" value="contact" />
