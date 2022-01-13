@@ -1,7 +1,14 @@
 // import axios from "axios";
 import styles from "components/ReservationForm.module.css";
 
-function ReservationForm() {
+function ReservationForm({
+  menu,
+  place,
+  address,
+  prevPrice,
+  saledPrice,
+  deadline,
+}) {
   const { reservationForm, phoneNumClass, time, submitBtn } = styles;
 
   // const onSubmit = async (event) => {
@@ -76,6 +83,12 @@ function ReservationForm() {
       data-netlify="true"
     >
       <input type="hidden" name="form-name" value="contact" />
+      <input type="hidden" name="menu" value={menu} />
+      <input type="hidden" name="place" value={place} />
+      <input type="hidden" name="address" value={address} />
+      <input type="hidden" name="prevPrice" value={prevPrice} />
+      <input type="hidden" name="saledPrice" value={saledPrice} />
+      <input type="hidden" name="deadline" value={deadline} />
       <p>
         <label htmlFor="phone">
           휴대폰 번호를 입력해주세요 ( - 제외 )

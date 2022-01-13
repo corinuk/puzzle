@@ -37,7 +37,14 @@ function Food() {
       <span className={`${detail} ${deadlineClass}`}>
         마감시간 : {deadline}
       </span>
-      <ReservationForm />
+      <ReservationForm
+        menu={menu}
+        place={place}
+        address={address}
+        prevPrice={prevPrice}
+        saledPrice={saledPrice}
+        deadline={deadline}
+      />
     </div>
   );
 }
