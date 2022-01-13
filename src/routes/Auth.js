@@ -6,7 +6,8 @@ import {
   loginWithRedirect,
 } from "fb";
 
-function Auth({ kakaoAuthUrl }) {
+// function Auth({ kakaoAuthUrl }) {
+function Auth() {
   const clickSocialLogin = async (event) => {
     const {
       target: { name },

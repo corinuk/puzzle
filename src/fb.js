@@ -7,8 +7,6 @@ import {
   GoogleAuthProvider,
   FacebookAuthProvider,
   signInWithRedirect,
-  // signInWithPopup,
-  // signInWithEmailLink,
   getRedirectResult,
 } from "firebase/auth";
 import { getFirestore } from "firebase/firestore";
@@ -31,8 +29,6 @@ const authStateChanged = onAuthStateChanged;
 const googleAuthProvider = GoogleAuthProvider;
 const facebookAuthProvider = FacebookAuthProvider;
 const loginWithRedirect = signInWithRedirect;
-// const loginWithPopup = signInWithPopup;
-// const loginWithEmailLink = signInWithEmailLink;
 const getResult = getRedirectResult;
 
 const dbService = getFirestore();
@@ -45,8 +41,6 @@ export {
   googleAuthProvider,
   facebookAuthProvider,
   loginWithRedirect,
-  // loginWithPopup,
-  // loginWithEmailLink,
   getResult,
   dbService,
 };
