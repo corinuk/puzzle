@@ -26,7 +26,9 @@ function ReservationForm() {
     const phoneNum = parentNode[0].value;
 
     const data = `${year}년${month}월${day}일 ${hour}:${minute}:${second}\n${menu}\n${place}\n${address}\n${prevPrice}\n${saledPrice}\n${deadline}\n${pickupTime}\n${phoneNum}`;
-    const url = process.env.REACT_APP_SLACK_WEBHOOK_URL;
+    const PROXY = window.location.hostname === "localhost" ? "" : "/proxy";
+    const url = `${PROXY}${process.env.REACT_APP_SLACK_WEBHOOK_URL}`;
+    // const url = process.env.REACT_APP_SLACK_WEBHOOK_URL;
     try {
       const result = await axios({
         method: "post",
@@ -57,7 +59,7 @@ function ReservationForm() {
       className={reservationForm}
       onSubmit={onSubmit}
       method="POST"
-      netlify
+      netlify="true"
       data-netlify="true"
       data-netlify-honeypot="bot-field"
       data-netlify-recaptcha="true"
