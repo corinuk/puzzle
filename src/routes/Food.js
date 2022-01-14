@@ -24,29 +24,38 @@ function Food() {
 
   return (
     <div className={foodDiv}>
-      <GoToPrevPage />
-      <img className={`${img}`} alt="food-img" src={fileURL} />
-      <h3 className={`${detail} ${menuClass}`}>{menu}</h3>
-      <span className={`${detail} ${placeClass}`}>{place}</span>
-      <span className={`${detail} ${addressClass}`}>{address}</span>
-      <span className={`${detail} ${prevPriceClass}`}>
-        원가 : {Number(`${prevPrice}`).toLocaleString("en")}원
-      </span>
-      <span className={`${detail} ${saledPriceClass}`}>
-        할인가 : {Number(`${saledPrice}`).toLocaleString("en")}원
-      </span>
-      <span className={`${detail} ${deadlineClass}`}>
-        마감시간 : {deadline}
-      </span>
-      <ReservationForm
-        menu={menu}
-        place={place}
-        address={address}
-        prevPrice={prevPrice}
-        saledPrice={saledPrice}
-        deadline={deadline}
-      />
-      {menu === null && <CompleteReserv />}
+      {(function () {
+        if (menu) {
+          return (
+            <>
+              <GoToPrevPage />
+              <img className={`${img}`} alt="food-img" src={fileURL} />
+              <h3 className={`${detail} ${menuClass}`}>{menu}</h3>
+              <span className={`${detail} ${placeClass}`}>{place}</span>
+              <span className={`${detail} ${addressClass}`}>{address}</span>
+              <span className={`${detail} ${prevPriceClass}`}>
+                원가 : {Number(`${prevPrice}`).toLocaleString("en")}원
+              </span>
+              <span className={`${detail} ${saledPriceClass}`}>
+                할인가 : {Number(`${saledPrice}`).toLocaleString("en")}원
+              </span>
+              <span className={`${detail} ${deadlineClass}`}>
+                마감시간 : {deadline}
+              </span>
+              <ReservationForm
+                menu={menu}
+                place={place}
+                address={address}
+                prevPrice={prevPrice}
+                saledPrice={saledPrice}
+                deadline={deadline}
+              />
+            </>
+          );
+        } else {
+          return <CompleteReserv />;
+        }
+      })()}
     </div>
   );
 }

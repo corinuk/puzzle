@@ -18,7 +18,6 @@ function ReservationForm({
         className={reservationForm}
         method="POST"
         data-netlify="true"
-        action="/thanks"
         // onSubmit={(e) => onSubmit(e)}
       >
         <input type="hidden" name="form-name" value="contact" />

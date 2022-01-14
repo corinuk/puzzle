@@ -1,5 +1,0 @@
-[[redirects]]
-  from = "/food"
-  to = "/success"
-  status = 301
-  force = true
