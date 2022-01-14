@@ -57,6 +57,7 @@ function Food() {
           saledPrice={saledPrice}
           deadline={deadline}
           createdAt={createdAt}
+          fileURL={fileURL}
         />
       </div>
     );
