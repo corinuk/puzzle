@@ -3,6 +3,7 @@ import styles from "components/ReservationForm.module.css";
 import { dbService, storageService } from "fb";
 import { deleteDoc, doc, query } from "firebase/firestore";
 import { deleteObject, ref } from "firebase/storage";
+import { useRef, useState } from "react";
 
 function ReservationForm({
   id,
@@ -14,42 +15,42 @@ function ReservationForm({
   deadline,
   createdAt,
 }) {
-  const { reservationForm, phoneNumClass, time, submitBtn } = styles;
+  const { reservationForm, phoneNumClass, timeClass, submitBtn } = styles;
+  const [phone, setPhone] = useState("");
+  const [time, setTime] = useState("");
+  const formRef = useRef();
 
-  const onSubmit = async () => {
+  const onSubmit = async (event) => {
+    event.preventDefault();
+    const pickupTime = event.target.parentNode.children[0][1].value;
+    setTime(pickupTime);
     const q = query(doc(dbService, "foods", `${id}`));
     const fileRef = ref(storageService, `/images/${createdAt}`);
     await deleteDoc(q);
     await deleteObject(fileRef);
+    formRef.current.submit();
+  };
+  const onChange = (event) => {
+    if (event.target.id === "phone") {
+      setPhone(event.target.value);
+    }
   };
 
   return (
     <div>
-      <form
-        name="contact"
-        className={reservationForm}
-        method="POST"
-        data-netlify="true"
-        onSubmit={onSubmit}
-      >
-        <input type="hidden" name="form-name" value="contact" />
-        <input type="hidden" name="menu" value={menu} />
-        <input type="hidden" name="place" value={place} />
-        <input type="hidden" name="address" value={address} />
-        <input type="hidden" name="prevPrice" value={prevPrice} />
-        <input type="hidden" name="saledPrice" value={saledPrice} />
-        <input type="hidden" name="deadline" value={deadline} />
+      <form onSubmit={onSubmit} className={reservationForm}>
         <p>
           <label htmlFor="phone">
             휴대폰 번호를 입력해주세요 ( - 제외 )
             <br />
             <input
-              name="phone"
               required
               id="phone"
               type="number"
               placeholder="휴대폰 번호"
               className={phoneNumClass}
+              value={phone}
+              onChange={onChange}
             />
           </label>
         </p>
@@ -57,7 +58,7 @@ function ReservationForm({
           <label htmlFor="time">
             픽업하실 시간을 입력해주세요
             <br />
-            <select name="time" id="time" className={time}>
+            <select id="time" className={timeClass}>
               <option>10분뒤</option>
               <option>20분뒤</option>
               <option>30분뒤</option>
@@ -72,6 +73,25 @@ function ReservationForm({
             onSubmit={onSubmit}
           />
         </p>
+      </form>
+      <form
+        hidden
+        id="submittingForm"
+        name="contact"
+        method="POST"
+        data-netlify="true"
+        ref={formRef}
+      >
+        <input type="hidden" name="form-name" value="contact" />
+        <input type="hidden" name="id" value={id} />
+        <input type="hidden" name="menu" value={menu} />
+        <input type="hidden" name="place" value={place} />
+        <input type="hidden" name="address" value={address} />
+        <input type="hidden" name="prevPrice" value={prevPrice} />
+        <input type="hidden" name="saledPrice" value={saledPrice} />
+        <input type="hidden" name="deadline" value={deadline} />
+        <input type="hidden" name="phone" value={phone} />
+        <input type="hidden" name="time" value={time} />
       </form>
     </div>
   );
