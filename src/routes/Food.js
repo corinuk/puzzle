@@ -7,6 +7,7 @@ import CompleteReserv from "components/CompleteReserv";
 function Food() {
   const location = useLocation();
   const {
+    state,
     state: { menu, place, address, prevPrice, saledPrice, deadline, fileURL },
   } = location;
 
@@ -25,7 +26,7 @@ function Food() {
   return (
     <div className={foodDiv}>
       {(function () {
-        if (menu) {
+        if (state) {
           return (
             <>
               <GoToPrevPage />
