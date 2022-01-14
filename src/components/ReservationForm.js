@@ -16,8 +16,7 @@ function ReservationForm({
 }) {
   const { reservationForm, phoneNumClass, time, submitBtn } = styles;
 
-  const onSubmit = async (event) => {
-    event.preventDefault();
+  const onSubmit = async () => {
     const q = query(doc(dbService, "foods", `${id}`));
     console.log(q);
     const fileRef = ref(storageService, `/images/${createdAt}`);
