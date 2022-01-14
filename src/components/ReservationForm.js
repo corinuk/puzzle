@@ -69,7 +69,7 @@ function ReservationForm({
             type="submit"
             className={submitBtn}
             value="예약하기"
-            onClick={onSubmit}
+            onSubmit={onSubmit}
           />
         </p>
       </form>
