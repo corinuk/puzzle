@@ -2,6 +2,7 @@ import GoToPrevPage from "components/GoToPrevPage";
 import { useLocation } from "react-router-dom";
 import styles from "components/Food.module.css";
 import ReservationForm from "components/ReservationForm";
+import CompleteReserv from "components/CompleteReserv";
 
 function Food() {
   const location = useLocation();
@@ -45,6 +46,7 @@ function Food() {
         saledPrice={saledPrice}
         deadline={deadline}
       />
+      {menu || <CompleteReserv />}
     </div>
   );
 }

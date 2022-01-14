@@ -1,6 +1,5 @@
 // import axios from "axios";
 import styles from "components/ReservationForm.module.css";
-import CompleteReserv from "components/CompleteReserv";
 
 function ReservationForm({
   menu,
@@ -63,7 +62,6 @@ function ReservationForm({
           />
         </p>
       </form>
-      {menu || <CompleteReserv />}
     </div>
   );
 }
