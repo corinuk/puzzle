@@ -1,0 +1,4 @@
+.complete {
+  display: flex;
+  flex-direction: column;
+}

@@ -49,8 +49,10 @@ function Food() {
       </div>
     );
   } catch (err) {
+    console.dir(err);
     return <CompleteReserv />;
   }
+  // return <CompleteReserv />;
 }
 
 export default Food;
