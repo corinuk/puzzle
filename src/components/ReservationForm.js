@@ -12,50 +12,13 @@ function ReservationForm({
 }) {
   const { reservationForm, phoneNumClass, time, submitBtn } = styles;
 
-  const onSubmit = async (event) => {
-    event.preventDefault();
-    setSubmitText("Submitting ...");
-    let formElements = [];
-    for (let i = 1; i < 9; i++) {
-      formElements.push(event.target.parentNode.parentNode[i].value);
-    }
-    const elements = formElements.join("\n").toString();
-    const url = process.env.REACT_APP_SLACK_WEBHOOK_URL;
-
-    try {
-      const result = await axios({
-        method: "post",
-        url,
-        headers: {
-          "Content-Type": "application/json",
-        },
-        data: {
-          blocks: [
-            {
-              type: "section",
-              text: {
-                type: "mrkdwn",
-                text: elements,
-              },
-            },
-          ],
-        },
-      });
-      return result;
-    } catch (err) {
-      console.error(err);
-    }
-  };
-
-  const [submitText, setSubmitText] = useState(null);
-
   return (
     <form
       name="contact"
       className={reservationForm}
       method="POST"
       data-netlify="true"
-      onSubmit={(e) => onSubmit(e)}
+      // onSubmit={(e) => onSubmit(e)}
     >
       <input type="hidden" name="form-name" value="contact" />
       <input type="hidden" name="menu" value={menu} />
@@ -94,10 +57,9 @@ function ReservationForm({
           type="submit"
           className={submitBtn}
           value="예약하기"
-          onClick={onSubmit}
+          // onClick={onSubmit}
         />
       </p>
-      {submitText && <div>{submitText}</div>}
     </form>
   );
 }
