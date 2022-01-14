@@ -1,6 +1,5 @@
-import axios from "axios";
+// import axios from "axios";
 import styles from "components/ReservationForm.module.css";
-import { useState } from "react";
 
 function ReservationForm({
   menu,
