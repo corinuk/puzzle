@@ -24,6 +24,7 @@ function ReservationForm({
     const pickupTime = event.target.parentNode.children[0][1].value;
     setTime(pickupTime);
     try {
+      const now = Date.now();
       await addDoc(collection(dbService, "orders"), {
         menu,
         place,
@@ -32,6 +33,7 @@ function ReservationForm({
         saledPrice,
         deadline,
         createdAt,
+        createdAt_order: now,
         fileURL,
       });
       formRef.current.submit();
