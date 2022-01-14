@@ -10,6 +10,7 @@ import {
   getRedirectResult,
 } from "firebase/auth";
 import { getFirestore } from "firebase/firestore";
+import { getStorage } from "firebase/storage";
 
 const firebaseConfig = {
   apiKey: process.env.REACT_APP_API_KEY,
@@ -32,6 +33,7 @@ const loginWithRedirect = signInWithRedirect;
 const getResult = getRedirectResult;
 
 const dbService = getFirestore();
+const storageService = getStorage();
 
 export {
   authService,
@@ -43,4 +45,5 @@ export {
   loginWithRedirect,
   getResult,
   dbService,
+  storageService,
 };

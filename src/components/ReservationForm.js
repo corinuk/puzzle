@@ -1,15 +1,29 @@
 // import axios from "axios";
 import styles from "components/ReservationForm.module.css";
+import { dbService, storageService } from "fb";
+import { deleteDoc, doc, query } from "firebase/firestore";
+import { deleteObject, ref } from "firebase/storage";
 
 function ReservationForm({
+  id,
   menu,
   place,
   address,
   prevPrice,
   saledPrice,
   deadline,
+  createdAt,
 }) {
   const { reservationForm, phoneNumClass, time, submitBtn } = styles;
+
+  const onSubmit = async (event) => {
+    event.preventDefault();
+    const q = query(doc(dbService, "foods", `${id}`));
+    console.log(q);
+    const fileRef = ref(storageService, `/images/${createdAt}`);
+    await deleteObject(fileRef);
+    await deleteDoc(q);
+  };
 
   return (
     <div>
@@ -18,10 +32,10 @@ function ReservationForm({
         className={reservationForm}
         method="POST"
         data-netlify="true"
-        // onSubmit={(e) => onSubmit(e)}
+        onSubmit={onSubmit}
       >
         <input type="hidden" name="form-name" value="contact" />
-        {/* <input type="hidden" name="menu" value={menu} /> */}
+        <input type="hidden" name="menu" value={menu} />
         <input type="hidden" name="place" value={place} />
         <input type="hidden" name="address" value={address} />
         <input type="hidden" name="prevPrice" value={prevPrice} />
@@ -57,7 +71,7 @@ function ReservationForm({
             type="submit"
             className={submitBtn}
             value="예약하기"
-            // onClick={onSubmit}
+            onClick={onSubmit}
           />
         </p>
       </form>

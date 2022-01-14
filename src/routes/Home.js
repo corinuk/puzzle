@@ -44,8 +44,10 @@ function Home() {
               saledPrice,
               deadline,
               fileURL,
+              createdAt,
             }) => (
               <Item
+                id={id}
                 key={id}
                 menu={menu}
                 place={place}
@@ -54,6 +56,7 @@ function Home() {
                 saledPrice={Number(saledPrice)}
                 deadline={deadline}
                 fileURL={fileURL}
+                createdAt={createdAt}
               />
             )
           );

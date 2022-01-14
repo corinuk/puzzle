@@ -8,7 +8,17 @@ function Food() {
   try {
     const location = useLocation();
     const {
-      state: { menu, place, address, prevPrice, saledPrice, deadline, fileURL },
+      state: {
+        id,
+        menu,
+        place,
+        address,
+        prevPrice,
+        saledPrice,
+        deadline,
+        fileURL,
+        createdAt,
+      },
     } = location;
 
     const {
@@ -39,17 +49,19 @@ function Food() {
           마감시간 : {deadline}
         </span>
         <ReservationForm
+          id={id}
           menu={menu}
           place={place}
           address={address}
           prevPrice={prevPrice}
           saledPrice={saledPrice}
           deadline={deadline}
+          createdAt={createdAt}
         />
       </div>
     );
   } catch (err) {
-    console.dir(err);
+    // "Cannot read properties of null (reading 'menu')"
     return <CompleteReserv />;
   }
   // return <CompleteReserv />;
