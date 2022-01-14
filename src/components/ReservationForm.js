@@ -18,21 +18,11 @@ function ReservationForm({
 
   const onSubmit = async () => {
     const q = query(doc(dbService, "foods", `${id}`));
-    console.log(q);
     const fileRef = ref(storageService, `/images/${createdAt}`);
-    await deleteObject(fileRef);
     await deleteDoc(q);
-  };
-
-  return (
-    <div>
-      <form
-        name="contact"
-        className={reservationForm}
-        method="POST"
-        data-netlify="true"
-        onSubmit={onSubmit}
-      >
+    await deleteObject(fileRef);
+    return (
+      <>
         <input type="hidden" name="form-name" value="contact" />
         <input type="hidden" name="menu" value={menu} />
         <input type="hidden" name="place" value={place} />
@@ -73,7 +63,19 @@ function ReservationForm({
             onClick={onSubmit}
           />
         </p>
-      </form>
+      </>
+    );
+  };
+
+  return (
+    <div>
+      <form
+        name="contact"
+        className={reservationForm}
+        method="POST"
+        data-netlify="true"
+        onSubmit={onSubmit}
+      ></form>
     </div>
   );
 }
