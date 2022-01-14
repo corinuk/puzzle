@@ -22,7 +22,12 @@ function ReservationForm({
     await deleteDoc(q);
     await deleteObject(fileRef);
     return (
-      <>
+      <form
+        name="contact"
+        className={reservationForm}
+        method="POST"
+        data-netlify="true"
+      >
         <input type="hidden" name="form-name" value="contact" />
         <input type="hidden" name="menu" value={menu} />
         <input type="hidden" name="place" value={place} />
@@ -63,7 +68,7 @@ function ReservationForm({
             onClick={onSubmit}
           />
         </p>
-      </>
+      </form>
     );
   };
 
@@ -71,11 +76,20 @@ function ReservationForm({
     <div>
       <form
         name="contact"
-        className={reservationForm}
-        method="POST"
-        data-netlify="true"
+        netlify
+        netlify-honeypot="bot-field"
+        hidden
         onSubmit={onSubmit}
-      ></form>
+      >
+        <input type="text" name="menu" />
+        <input type="text" name="place" />
+        <input type="text" name="address" />
+        <input type="number" name="prevPrice" />
+        <input type="number" name="saledPrice" />
+        <input type="text" name="deadline" />
+        <input type="number" name="phone" />
+        <select name="time"></select>
+      </form>
     </div>
   );
 }
