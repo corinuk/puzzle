@@ -1,8 +1,6 @@
-// import axios from "axios";
 import styles from "components/ReservationForm.module.css";
-import { dbService, storageService } from "fb";
-import { deleteDoc, doc, query } from "firebase/firestore";
-import { deleteObject, ref } from "firebase/storage";
+import { dbService } from "fb";
+import { addDoc, collection } from "firebase/firestore";
 import { useRef, useState } from "react";
 
 function ReservationForm({
@@ -24,11 +22,20 @@ function ReservationForm({
     event.preventDefault();
     const pickupTime = event.target.parentNode.children[0][1].value;
     setTime(pickupTime);
-    const q = query(doc(dbService, "foods", `${id}`));
-    const fileRef = ref(storageService, `/images/${createdAt}`);
-    await deleteDoc(q);
-    await deleteObject(fileRef);
-    formRef.current.submit();
+    try {
+      await addDoc(collection(dbService, "orders"), {
+        menu,
+        place,
+        address,
+        prevPrice,
+        saledPrice,
+        deadline,
+        createdAt,
+      });
+      formRef.current.submit();
+    } catch (error) {
+      console.error("Error adding document: ", error);
+    }
   };
   const onChange = (event) => {
     if (event.target.id === "phone") {
