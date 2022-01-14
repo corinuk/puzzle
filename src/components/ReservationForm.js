@@ -21,12 +21,16 @@ function ReservationForm({
     const fileRef = ref(storageService, `/images/${createdAt}`);
     await deleteDoc(q);
     await deleteObject(fileRef);
-    return (
+  };
+
+  return (
+    <div>
       <form
         name="contact"
         className={reservationForm}
         method="POST"
         data-netlify="true"
+        onSubmit={onSubmit}
       >
         <input type="hidden" name="form-name" value="contact" />
         <input type="hidden" name="menu" value={menu} />
@@ -68,27 +72,6 @@ function ReservationForm({
             onClick={onSubmit}
           />
         </p>
-      </form>
-    );
-  };
-
-  return (
-    <div>
-      <form
-        name="contact"
-        netlify
-        netlify-honeypot="bot-field"
-        hidden
-        onSubmit={onSubmit}
-      >
-        <input type="text" name="menu" />
-        <input type="text" name="place" />
-        <input type="text" name="address" />
-        <input type="number" name="prevPrice" />
-        <input type="number" name="saledPrice" />
-        <input type="text" name="deadline" />
-        <input type="number" name="phone" />
-        <select name="time"></select>
       </form>
     </div>
   );
