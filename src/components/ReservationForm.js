@@ -1,6 +1,6 @@
 // import axios from "axios";
 import styles from "components/ReservationForm.module.css";
-import CompleteReserv from "./CompleteReserv";
+import CompleteReserv from "components/CompleteReserv";
 
 function ReservationForm({
   menu,
