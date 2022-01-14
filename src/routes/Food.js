@@ -46,7 +46,7 @@ function Food() {
         saledPrice={saledPrice}
         deadline={deadline}
       />
-      {menu || <CompleteReserv />}
+      {menu === null && <CompleteReserv />}
     </div>
   );
 }
