@@ -5,25 +5,25 @@
 .item {
   display: flex;
   background-color: white;
-  padding: 20px;
+  padding: 1.3rem;
 }
 /* 이미지에 속성 부여 */
 .img {
-  width: 150px;
-  height: 150px;
-  min-width: 150px;
-  border: 1px solid rgb(173, 170, 170);
-  border-radius: 20px;
+  width: 9.2rem;
+  height: 9.2rem;
+  min-width: 9.2rem;
+  border: 0.08rem solid rgb(173, 170, 170);
+  border-radius: 1.3rem;
 }
 
 /* 메뉴 텍스트 박스 전체에 속성 부여 */
 .details {
-  padding: 5px;
-  padding-left: 30px;
-  padding-top: 0;
-  width: 180px;
-  min-width: 180px;
-  height: 150px;
+  padding: 0.33rem;
+  padding-left: 1.85rem;
+  padding-top: 0rem;
+  width: 11.2rem;
+  min-width: 11.2rem;
+  height: 9.5rem;
   display: flex;
   background-color: white;
   flex-direction: column;
@@ -32,50 +32,50 @@
 /* 아래부터 게시물의 font속성부여 */
 .menuClass {
   color: black;
-  font-size: 18px;
+  font-size: 1.12rem;
   font-weight: 800;
-  height: 27px;
+  height: 1.7rem;
   margin: 0;
 }
 
 .placeClass {
   color: black;
-  font-size: 10px;
+  font-size: 0.66rem;
   font-weight: 340;
-  margin-top: 2px;
+  margin-top: 0.14rem;
 }
 
 .addressClass {
   color: gray;
-  font-size: 5px;
+  font-size: 0.33rem;
   font-weight: 500;
-  margin-bottom: 10px;
+  margin-bottom: 0.66rem;
 }
 
 /* 원가에 속성부여 */
 .prevPriceClass {
   color: black;
   font-weight: 440;
-  height: 20px;
-  font-size: 14px;
+  height: 1.66rem;
+  font-size: 0.88rem;
   text-decoration: line-through;
-  text-decoration-style: double;
+  text-decoration-style: solid;
   text-decoration-color: rgb(216, 54, 14);
-  text-decoration-thickness: 1.5px;
+  text-decoration-thickness: 0.17rem;
 }
 
 /* 할인가에 속성부여 */
 .saledPriceClass {
   color: black;
-  font-size: 17px;
+  font-size: 1.06rem;
   font-weight: 550;
-  height: 20;
-  margin-top: 2px;
+  height: 1.66rem;
+  margin-top: 0.125rem;
 }
 /* 마감시간에 속성부여 */
 .deadlineClass {
   color: black;
-  font-size: 10px;
+  font-size: 0.625rem;
   font-weight: 400;
-  margin-top: 7px;
+  margin-top: 0.52rem;
 }

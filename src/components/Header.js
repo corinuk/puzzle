@@ -16,8 +16,8 @@ function Header() {
           <img
             alt="퍼즐!(puzzle)"
             src="https://www.creativefabrica.com/wp-content/uploads/2018/11/Puzzle-piece-by-akaisredinjapan-5-580x386.jpg"
-            width="70px"
-            height="70px"
+            width="4.25rem"
+            height="4.25rem"
           />
         </Col>
         <Col xs={4}>

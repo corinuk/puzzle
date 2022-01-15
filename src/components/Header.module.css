@@ -4,19 +4,19 @@
 
 .titleAll {
   border-bottom: 1px black solid;
-  margin: 50px 17px 0px 17px;
+  margin: 0.9rem 1.1rem 0rem 1.1rem;
 }
 
 .subtitle {
   font-weight: 350;
-  font-size: 12px;
+  font-size: 0.85rem;
   text-align: center;
 }
 .title {
   font-weight: 600;
-  font-size: 30px;
+  font-size: 1.8rem;
   text-align: center;
-  margin-bottom: 15px;
+  margin-bottom: 0.9rem;
 }
 
 .index {
@@ -24,7 +24,7 @@
 }
 
 .btn {
-  margin-top: 30px;
+  margin-top: 1.9rem;
 }
 /* .category {
   background-color: skyblue;
