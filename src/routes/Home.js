@@ -43,8 +43,9 @@ function Home() {
               price,
               saledPrice,
               deadline,
-              fileURL,
               createdAt,
+              fileURL,
+              fileURL_stack,
             }) => (
               <Item
                 id={id}
@@ -55,8 +56,9 @@ function Home() {
                 prevPrice={Number(price)}
                 saledPrice={Number(saledPrice)}
                 deadline={deadline}
-                fileURL={fileURL}
                 createdAt={createdAt}
+                fileURL={fileURL}
+                fileURL_stack={fileURL_stack}
               />
             )
           );

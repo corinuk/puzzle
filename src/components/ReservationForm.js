@@ -12,7 +12,7 @@ function ReservationForm({
   saledPrice,
   deadline,
   createdAt,
-  fileURL,
+  fileURL_stack,
 }) {
   const { reservationForm, phoneNumClass, timeClass, submitBtn } = styles;
   const [phone, setPhone] = useState("");
@@ -25,9 +25,13 @@ function ReservationForm({
     const pickupTime = event.target.parentNode.children[0][1].value;
     setTime(pickupTime);
     try {
-      const now = Date.now();
+      const createdAt_order = Date.now();
       await addDoc(collection(dbService, "orders"), {
         id,
+        createdAt,
+        createdAt_order,
+      });
+      await addDoc(collection(dbService, "ordered"), {
         menu,
         place,
         address,
@@ -35,9 +39,9 @@ function ReservationForm({
         saledPrice,
         deadline,
         createdAt,
-        createdAt_order: now,
+        createdAt_order,
         phoneNumber,
-        fileURL,
+        fileURL_stack,
       });
       formRef.current.submit();
     } catch (error) {
