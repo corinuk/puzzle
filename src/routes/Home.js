@@ -45,7 +45,6 @@ function Home() {
               deadline,
               createdAt,
               fileURL,
-              fileURL_stack,
             }) => (
               <Item
                 id={id}
@@ -58,7 +57,6 @@ function Home() {
                 deadline={deadline}
                 createdAt={createdAt}
                 fileURL={fileURL}
-                fileURL_stack={fileURL_stack}
               />
             )
           );

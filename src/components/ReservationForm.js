@@ -12,7 +12,6 @@ function ReservationForm({
   saledPrice,
   deadline,
   createdAt,
-  fileURL_stack,
 }) {
   const { reservationForm, phoneNumClass, timeClass, submitBtn } = styles;
   const [phone, setPhone] = useState("");
@@ -41,7 +40,6 @@ function ReservationForm({
         createdAt,
         createdAt_order,
         phoneNumber,
-        fileURL_stack,
       });
       formRef.current.submit();
     } catch (error) {

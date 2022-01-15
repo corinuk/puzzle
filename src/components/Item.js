@@ -15,7 +15,6 @@ function Item({
   deadline,
   fileURL,
   createdAt,
-  fileURL_stack,
 }) {
   const {
     link,
@@ -43,7 +42,6 @@ function Item({
         deadline,
         createdAt,
         fileURL,
-        fileURL_stack,
       }}
       className={link}
     >

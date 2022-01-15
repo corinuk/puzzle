@@ -18,7 +18,6 @@ function Food() {
         deadline,
         createdAt,
         fileURL,
-        fileURL_stack,
       },
     } = location;
 
@@ -59,7 +58,6 @@ function Food() {
           deadline={deadline}
           createdAt={createdAt}
           fileURL={fileURL}
-          fileURL_stack={fileURL_stack}
         />
       </div>
     );
