@@ -13,16 +13,9 @@ function ReservationForm({
   deadline,
   createdAt,
 }) {
-  const {
-    reservationForm,
-    phoneNumClass,
-    timeClass,
-    submitBtn,
-    // authNumberClass,
-  } = styles;
+  const { reservationForm, phoneNumClass, timeClass, submitBtn } = styles;
   const [phone, setPhone] = useState("");
   const [time, setTime] = useState("");
-  // const [authNumber, setAuthNumber] = useState("");
   const formRef = useRef();
 
   const onSubmit = async (event) => {
@@ -57,9 +50,6 @@ function ReservationForm({
     if (event.target.id === "phone") {
       setPhone(event.target.value);
     }
-    // else if (event.target.id === "authNumber") {
-    //   setAuthNumber(event.target.value);
-    // }
   };
 
   return (
@@ -78,23 +68,7 @@ function ReservationForm({
               value={phone}
               onChange={onChange}
             />
-            <button>인증 요청</button>
           </label>
-          {/* <br />
-          <label htmlFor="authNumber">
-            인증번호를 입력해주세요
-            <br />
-            <input
-              required
-              id="authNumber"
-              type="number"
-              placeholder="인증 번호"
-              className={authNumberClass}
-              value={authNumber}
-              onChange={onChange}
-            />
-            <button>인증 확인</button>
-          </label> */}
         </p>
         <p>
           <label htmlFor="time">

@@ -5,7 +5,6 @@ import {
   createUserWithEmailAndPassword,
   onAuthStateChanged,
   GoogleAuthProvider,
-  FacebookAuthProvider,
   signInWithRedirect,
   getRedirectResult,
 } from "firebase/auth";
@@ -28,7 +27,6 @@ const createUser = createUserWithEmailAndPassword;
 const signIn = signInWithEmailAndPassword;
 const authStateChanged = onAuthStateChanged;
 const googleAuthProvider = GoogleAuthProvider;
-const facebookAuthProvider = FacebookAuthProvider;
 const loginWithRedirect = signInWithRedirect;
 const getResult = getRedirectResult;
 
@@ -41,7 +39,6 @@ export {
   signIn,
   authStateChanged,
   googleAuthProvider,
-  facebookAuthProvider,
   loginWithRedirect,
   getResult,
   dbService,
