@@ -21,11 +21,13 @@ function ReservationForm({
 
   const onSubmit = async (event) => {
     event.preventDefault();
+    const phoneNumber = event.target.parentNode.children[0][0].value;
     const pickupTime = event.target.parentNode.children[0][1].value;
     setTime(pickupTime);
     try {
       const now = Date.now();
       await addDoc(collection(dbService, "orders"), {
+        id,
         menu,
         place,
         address,
@@ -34,6 +36,7 @@ function ReservationForm({
         deadline,
         createdAt,
         createdAt_order: now,
+        phoneNumber,
         fileURL,
       });
       formRef.current.submit();
