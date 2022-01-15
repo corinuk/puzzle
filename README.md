@@ -1,3 +1,23 @@
+\\\\\\\\\\\\
+터미널 단축키 : 컨트롤 + ₩ or 컨트롤 + 쉬프트 + ₩
+\\\\\\\\\\\\
+
+\\\\\\\\\\\\
+아침에 코딩 시작하기 전 - github에서 가져오는 기본 명령어:
+$ git remote update
+$ git pull origin master
+\\\\\\\\\\\\
+
+\\\\\\\\\\\\
+밤에 코딩 다 끝난 후 - github에 올리는 기본 명령어:
+
+1. $ git init
+   1-1. $ git remote add origin https://github.com/corinuk/puzzle ( 최초 한 번만 하면 됨. )
+2. $ git add .
+3. $ git commit -m “{ 내용 }”
+4. $ git push origin ysng
+   \\\\\\\\\\\\
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
@@ -68,3 +88,9 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+\\\\\\\\\\\\
+merge하기 :
+$ git remote update
+$ git merge origin/ysng
+\\\\\\\\\\\\
