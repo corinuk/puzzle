@@ -6,6 +6,7 @@ import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 
 function Item({
+  id,
   menu,
   place,
   address,
@@ -13,6 +14,7 @@ function Item({
   saledPrice,
   deadline,
   fileURL,
+  createdAt,
 }) {
   const {
     link,
@@ -31,12 +33,14 @@ function Item({
     <Link
       to={`/food`}
       state={{
+        id,
         menu,
         place,
         address,
         prevPrice,
         saledPrice,
         deadline,
+        createdAt,
         fileURL,
       }}
       className={link}
