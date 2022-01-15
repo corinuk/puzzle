@@ -7,7 +7,7 @@ import Button from "react-bootstrap/Button";
 // import UploadBtn from "./UploadBtn";
 
 function Header() {
-  const { logo, titleAll, subtitle, title, index, btn } = styles;
+  const { logo, titleAll, subtitle, title, titles, index, btn } = styles;
 
   return (
     <div className={titleAll}>
@@ -16,11 +16,11 @@ function Header() {
           <img
             alt="퍼즐!(puzzle)"
             src="https://www.creativefabrica.com/wp-content/uploads/2018/11/Puzzle-piece-by-akaisredinjapan-5-580x386.jpg"
-            width="4.25rem"
-            height="4.25rem"
+            width="70px"
+            height="70px"
           />
         </Col>
-        <Col xs={4}>
+        <Col xs={4} className={titles}>
           <div className={subtitle}>퍼주는 즐거움,</div>
           <div className={title}>Puzzle!</div>
         </Col>
