@@ -7,6 +7,10 @@
   margin: 0.9rem 1.1rem 0rem 1.1rem;
 }
 
+.titles {
+  padding: 0;
+}
+
 .subtitle {
   font-weight: 350;
   font-size: 0.85rem;

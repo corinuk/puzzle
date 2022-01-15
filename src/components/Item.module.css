@@ -40,14 +40,14 @@
 
 .placeClass {
   color: black;
-  font-size: 0.66rem;
+  font-size: 0.65rem;
   font-weight: 340;
   margin-top: 0.14rem;
 }
 
 .addressClass {
   color: gray;
-  font-size: 0.33rem;
+  font-size: 0.5rem;
   font-weight: 500;
   margin-bottom: 0.66rem;
 }
