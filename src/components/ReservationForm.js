@@ -55,7 +55,7 @@ function ReservationForm({
   return (
     <div>
       <form onSubmit={onSubmit} className={reservationForm}>
-        <p>
+        {/* <p>
           <label htmlFor="phone">
             휴대폰 번호를 입력해주세요 ( - 제외 )
             <br />
@@ -69,7 +69,7 @@ function ReservationForm({
               onChange={onChange}
             />
           </label>
-        </p>
+        </p> */}
         <p>
           <label htmlFor="time">
             픽업하실 시간을 입력해주세요

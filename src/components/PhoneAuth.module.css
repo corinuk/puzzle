@@ -1,0 +1,16 @@
+.phoneNumClass {
+  height: 30px;
+  height: 50px;
+}
+.authNumClass {
+  height: 30px;
+  height: 50px;
+}
+.submitBtn {
+  margin-top: 20px;
+  height: 50px;
+}
+.checkNum {
+  color: red;
+  font-size: 12px;
+}
