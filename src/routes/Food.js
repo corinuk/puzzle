@@ -2,8 +2,8 @@ import GoToPrevPage from "components/GoToPrevPage";
 import { useLocation } from "react-router-dom";
 import styles from "routes/Food.module.css";
 import ReservationForm from "components/ReservationForm";
-import CompleteReserv from "components/CompleteReserv";
-import PhoneAuth from "components/PhoneAuth";
+// import CompleteReserv from "components/CompleteReserv";
+// import PhoneAuth from "components/PhoneAuth";
 
 function Food() {
   // try {
