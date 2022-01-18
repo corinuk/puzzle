@@ -49,7 +49,7 @@ function Food() {
       <span className={`${detail} ${deadlineClass}`}>
         마감시간 : {deadline}
       </span>
-      <PhoneAuth
+      {/* <PhoneAuth
         id={id}
         menu={menu}
         place={place}
@@ -59,8 +59,8 @@ function Food() {
         deadline={deadline}
         createdAt={createdAt}
         fileURL={fileURL}
-      />
-      {/* <ReservationForm
+      /> */}
+      <ReservationForm
           id={id}
           menu={menu}
           place={place}
@@ -70,7 +70,7 @@ function Food() {
           deadline={deadline}
           createdAt={createdAt}
           fileURL={fileURL}
-        /> */}
+        />
     </div>
   );
   // } catch (err) {
