@@ -1,4 +1,6 @@
 import styles from "components/ReservationForm.module.css";
+import Container from "react-bootstrap/Container";
+import Form from "react-bootstrap/Form";
 import { dbService } from "fb";
 import { addDoc, collection } from "firebase/firestore";
 import { useRef, useState } from "react";
@@ -53,10 +55,10 @@ function ReservationForm({
   };
 
   return (
-    <div>
-      <form onSubmit={onSubmit} className={reservationForm}>
-        <p>
-          <label htmlFor="phone">
+    <Container>
+      <Form onSubmit={onSubmit} className={reservationForm}>
+        <Form.Group>
+          <Form.Label htmlFor="phone">
             휴대폰 번호를 입력해주세요 ( - 제외 )
             <br />
             <input
@@ -68,10 +70,10 @@ function ReservationForm({
               value={phone}
               onChange={onChange}
             />
-          </label>
-        </p>
-        <p>
-          <label htmlFor="time">
+          </Form.Label>
+        </Form.Group>
+        <Form.Group>
+          <Form.Label htmlFor="time">
             픽업하실 시간을 입력해주세요
             <br />
             <select id="time" className={timeClass}>
@@ -79,18 +81,18 @@ function ReservationForm({
               <option>20분뒤</option>
               <option>30분뒤</option>
             </select>
-          </label>
-        </p>
-        <p>
+          </Form.Label>
+        </Form.Group>
+        <Form.Group>
           <input
             type="submit"
             className={submitBtn}
             value="예약하기"
             onSubmit={onSubmit}
           />
-        </p>
-      </form>
-      <form
+        </Form.Group>
+      </Form>
+      <Form
         hidden
         id="submittingForm"
         name="contact"
@@ -108,8 +110,8 @@ function ReservationForm({
         <input type="hidden" name="deadline" value={deadline} />
         <input type="hidden" name="phone" value={phone} />
         <input type="hidden" name="time" value={time} />
-      </form>
-    </div>
+      </Form>
+    </Container>
   );
 }
 

@@ -3,6 +3,8 @@ import { useLocation } from "react-router-dom";
 import styles from "routes/Food.module.css";
 import ReservationForm from "components/ReservationForm";
 import CompleteReserv from "components/CompleteReserv";
+import Container from "react-bootstrap/Container";
+import Card from "react-bootstrap/Card";
 // import PhoneAuth from "components/PhoneAuth";
 
 function Food() {
@@ -34,32 +36,32 @@ function Food() {
       deadlineClass,
     } = styles;
     return (
-      <div className={foodDiv}>
+      <Container className={foodDiv}>
         <GoToPrevPage />
-        <img className={`${img}`} alt="food-img" src={fileURL} />
-        <h3 className={`${detail} ${menuClass}`}>{menu}</h3>
-        <span className={`${detail} ${placeClass}`}>{place}</span>
-        <span className={`${detail} ${addressClass}`}>{address}</span>
-        <span className={`${detail} ${prevPriceClass}`}>
-          원가 : {Number(`${prevPrice}`).toLocaleString("en")}원
-        </span>
-        <span className={`${detail} ${saledPriceClass}`}>
-          할인가 : {Number(`${saledPrice}`).toLocaleString("en")}원
-        </span>
-        <span className={`${detail} ${deadlineClass}`}>
-          마감시간 : {deadline}
-        </span>
-        {/* <PhoneAuth
-        id={id}
-        menu={menu}
-        place={place}
-        address={address}
-        prevPrice={prevPrice}
-        saledPrice={saledPrice}
-        deadline={deadline}
-        createdAt={createdAt}
-        fileURL={fileURL}
-      /> */}
+        <Container>
+          <Card border="light" bg="light">
+            <Card.Img
+              className={`${img}`}
+              alt="food-img"
+              variant="top"
+              src={fileURL}
+            />
+            <Card.Body>
+              <div className={`${detail} ${menuClass}`}>{menu}</div>
+              <div className={`${detail} ${placeClass}`}>{place}</div>
+              <div className={`${detail} ${addressClass}`}>{address}</div>
+              <div className={`${detail} ${prevPriceClass}`}>
+                원가 : {Number(`${prevPrice}`).toLocaleString("en")}원
+              </div>
+              <div className={`${detail} ${saledPriceClass}`}>
+                할인가 : {Number(`${saledPrice}`).toLocaleString("en")}원
+              </div>
+              <div className={`${detail} ${deadlineClass}`}>
+                마감시간 : {deadline}
+              </div>
+            </Card.Body>
+          </Card>
+        </Container>
         <ReservationForm
           id={id}
           menu={menu}
@@ -71,7 +73,7 @@ function Food() {
           createdAt={createdAt}
           fileURL={fileURL}
         />
-      </div>
+      </Container>
     );
   } catch (err) {
     return <CompleteReserv />;

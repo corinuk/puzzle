@@ -1,13 +1,28 @@
 .foodDiv {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
+  margin: 1rem;
 }
+
 .img {
-  margin-top: 30px;
-  width: 150px;
-  height: 150px;
+  height: 300px;
+  border: 0.08rem solid rgb(173, 170, 170);
+  border-radius: 0.8rem;
 }
-label {
-  margin-top: 20px;
+
+.menuClass {
+  font-size: 2.2rem;
+}
+.placeClass {
+  font-size: 1.1rem;
+}
+.addressClass {
+  font-size: 0.5rem;
+}
+.prevPriceClass {
+  font-size: 1.4rem;
+}
+.saledPriceClass {
+  font-size: 1.8rem;
+}
+.deadlineClass {
+  font-size: 1rem;
 }
