@@ -33,13 +33,14 @@ function Food() {
       addressClass,
       prevPriceClass,
       saledPriceClass,
-      deadlineClass,
+      deadlineClass1,
+      deadlineClass2,
     } = styles;
     return (
       <Container className={foodDiv}>
         <GoToPrevPage />
         <Container>
-          <Card border="light" bg="light">
+          <Card border="light" bg="light" style={{ width: "21.3rem" }}>
             <Card.Img
               className={`${img}`}
               alt="food-img"
@@ -48,7 +49,11 @@ function Food() {
             />
             <Card.Body>
               <div className={`${detail} ${menuClass}`}>{menu}</div>
-              <div className={`${detail} ${placeClass}`}>{place}</div>
+              <Card.Subtitle
+                className={`${detail} ${placeClass} mb-2 text-muted`}
+              >
+                {place}
+              </Card.Subtitle>
               <div className={`${detail} ${addressClass}`}>{address}</div>
               <div className={`${detail} ${prevPriceClass}`}>
                 원가 : {Number(`${prevPrice}`).toLocaleString("en")}원
@@ -56,8 +61,9 @@ function Food() {
               <div className={`${detail} ${saledPriceClass}`}>
                 할인가 : {Number(`${saledPrice}`).toLocaleString("en")}원
               </div>
-              <div className={`${detail} ${deadlineClass}`}>
-                마감시간 : {deadline}
+              <div>
+                <span className={`${deadlineClass1}`}>마감시간 : </span>
+                <span className={`${deadlineClass2}`}>{deadline}</span>
               </div>
             </Card.Body>
           </Card>

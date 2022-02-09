@@ -15,7 +15,14 @@ function ReservationForm({
   deadline,
   createdAt,
 }) {
-  const { reservationForm, phoneNumClass, timeClass, submitBtn } = styles;
+  const {
+    reservationForm,
+    phoneNumClass,
+    timeClass,
+    submitBtn,
+    phoneNum,
+    pickupT,
+  } = styles;
   const [phone, setPhone] = useState("");
   const [time, setTime] = useState("");
   const formRef = useRef();
@@ -59,8 +66,9 @@ function ReservationForm({
       <Form onSubmit={onSubmit} className={reservationForm}>
         <Form.Group>
           <Form.Label htmlFor="phone">
-            휴대폰 번호를 입력해주세요 ( - 제외 )
-            <br />
+            <div className={phoneNum}>
+              휴대폰 번호를 입력해주세요 ( - 제외 )
+            </div>
             <input
               required
               id="phone"
@@ -74,8 +82,7 @@ function ReservationForm({
         </Form.Group>
         <Form.Group>
           <Form.Label htmlFor="time">
-            픽업하실 시간을 입력해주세요
-            <br />
+            <div className={pickupT}>픽업하실 시간을 입력해주세요</div>
             <select id="time" className={timeClass}>
               <option>10분뒤</option>
               <option>20분뒤</option>
