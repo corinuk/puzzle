@@ -8,8 +8,8 @@ function CompleteReserv() {
     <div>
       <div className={complete}>
         <span>예약완료</span>
-        <span>예약 해주셔서 ㄱㅅㄱㅅ</span>
-        <span>님이 주신 번호로 연락 갈거 ㅅㄱㅅㄱ</span>
+        <span>예약 해주셔서 감사합니다.</span>
+        <span>작성해 주신 번호로 예약 정보가 전송됩니다.</span>
       </div>
       <div>
         <Link to={`/`}>
