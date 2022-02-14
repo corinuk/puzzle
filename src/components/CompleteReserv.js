@@ -13,7 +13,7 @@ function CompleteReserv() {
       </div>
       <div>
         <Link to={`/`}>
-          <button>확인</button>
+          <button>홈으로</button>
         </Link>
       </div>
     </div>
