@@ -118,7 +118,9 @@ function ReservationForm({
         <input type="hidden" name="address" value={address} />
         <input type="hidden" name="prevPrice" value={prevPrice} />
         <input type="hidden" name="saledPrice" value={saledPrice} />
-        <input type="hidden" name="deadline" value={deadline} />
+        <input type="hidden" name="ampm" value={ampm} />
+        <input type="hidden" name="deadlineHours" value={deadlineHours} />
+        <input type="hidden" name="deadlineMinutes" value={deadlineMinutes} />
         <input type="hidden" name="phone" value={phone} />
         <input type="hidden" name="time" value={time} />
       </Form>
