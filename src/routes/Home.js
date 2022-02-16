@@ -42,7 +42,9 @@ function Home() {
               address,
               price,
               saledPrice,
-              deadline,
+              ampm,
+              deadlineHours,
+              deadlineMinutes,
               createdAt,
               fileURL,
             }) => (
@@ -54,7 +56,9 @@ function Home() {
                 address={address}
                 prevPrice={Number(price)}
                 saledPrice={Number(saledPrice)}
-                deadline={deadline}
+                ampm={ampm}
+                deadlineHours={deadlineHours}
+                deadlineMinutes={deadlineMinutes}
                 createdAt={createdAt}
                 fileURL={fileURL}
               />

@@ -12,7 +12,9 @@ function Item({
   address,
   prevPrice,
   saledPrice,
-  deadline,
+  ampm,
+  deadlineHours,
+  deadlineMinutes,
   fileURL,
   createdAt,
 }) {
@@ -39,7 +41,9 @@ function Item({
         address,
         prevPrice,
         saledPrice,
-        deadline,
+        ampm,
+        deadlineHours,
+        deadlineMinutes,
         createdAt,
         fileURL,
       }}
@@ -61,7 +65,7 @@ function Item({
                   할인가 : {Number(`${saledPrice}`).toLocaleString("en")}원
                 </span>
                 <span className={`${deadlineClass}`}>
-                  마감시간 : {deadline}
+                  마감시간 : {`${ampm} ${deadlineHours}:${deadlineMinutes}`}
                 </span>
               </div>
             </Container>

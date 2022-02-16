@@ -18,7 +18,9 @@ function Food() {
         address,
         prevPrice,
         saledPrice,
-        deadline,
+        ampm,
+        deadlineHours,
+        deadlineMinutes,
         createdAt,
         fileURL,
       },
@@ -63,7 +65,9 @@ function Food() {
               </div>
               <div>
                 <span className={`${deadlineClass1}`}>마감시간 : </span>
-                <span className={`${deadlineClass2}`}>{deadline}</span>
+                <span
+                  className={`${deadlineClass2}`}
+                >{`${ampm} ${deadlineHours}:${deadlineMinutes}`}</span>
               </div>
             </Card.Body>
           </Card>
@@ -75,7 +79,9 @@ function Food() {
           address={address}
           prevPrice={prevPrice}
           saledPrice={saledPrice}
-          deadline={deadline}
+          ampm={ampm}
+          deadlineHours={deadlineHours}
+          deadlineMinutes={deadlineMinutes}
           createdAt={createdAt}
           fileURL={fileURL}
         />
