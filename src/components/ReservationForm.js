@@ -12,7 +12,9 @@ function ReservationForm({
   address,
   prevPrice,
   saledPrice,
-  deadline,
+  ampm,
+  deadlineHours,
+  deadlineMinutes,
   createdAt,
 }) {
   const {
@@ -45,7 +47,9 @@ function ReservationForm({
         address,
         prevPrice,
         saledPrice,
-        deadline,
+        ampm,
+        deadlineHours,
+        deadlineMinutes,
         createdAt,
         createdAt_order,
         phoneNumber,
