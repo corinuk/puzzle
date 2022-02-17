@@ -74,22 +74,24 @@ function ReservationForm({
   return (
     <Container>
       <Form onSubmit={onSubmit} className={reservationForm}>
-        <Form.Group>
-          <Form.Label htmlFor="count">
-            <div>예약하실 상품의 개수를 입력해주세요 (최대 {count} 개)</div>
-            <input
-              required
-              id="count"
-              type="number"
-              placeholder="개수"
-              className={countClass}
-              value={countNum}
-              onChange={onChange}
-              max={Number(count)}
-            />
-            <span> 개</span>
-          </Form.Label>
-        </Form.Group>
+        {count > 1 && (
+          <Form.Group>
+            <Form.Label htmlFor="count">
+              <div>예약하실 상품의 개수를 입력해주세요 (최대 {count} 개)</div>
+              <input
+                required
+                id="count"
+                type="number"
+                placeholder="개수"
+                className={countClass}
+                value={countNum}
+                onChange={onChange}
+                max={Number(count)}
+              />
+              <span> 개</span>
+            </Form.Label>
+          </Form.Group>
+        )}
         <Form.Group>
           <Form.Label htmlFor="phone">
             <div className={phoneNum}>
@@ -118,7 +120,9 @@ function ReservationForm({
         </Form.Group>
         <Form.Group>
           <Form.Label htmlFor="time">
-            <span>가격 : {Number(count) * saledPrice}</span>
+            <span>
+              가격 : {count === 1 ? saledPrice : Number(countNum) * saledPrice}
+            </span>
           </Form.Label>
         </Form.Group>
         <Form.Group>
