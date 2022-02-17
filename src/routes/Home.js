@@ -42,6 +42,7 @@ function Home() {
               address,
               price,
               saledPrice,
+              count,
               ampm,
               deadlineHours,
               deadlineMinutes,
@@ -56,6 +57,7 @@ function Home() {
                 address={address}
                 prevPrice={Number(price)}
                 saledPrice={Number(saledPrice)}
+                count={Number(count)}
                 ampm={ampm}
                 deadlineHours={deadlineHours}
                 deadlineMinutes={deadlineMinutes}

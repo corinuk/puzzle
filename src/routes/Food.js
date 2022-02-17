@@ -5,7 +5,6 @@ import ReservationForm from "components/ReservationForm";
 import CompleteReserv from "components/CompleteReserv";
 import Container from "react-bootstrap/Container";
 import Card from "react-bootstrap/Card";
-// import PhoneAuth from "components/PhoneAuth";
 
 function Food() {
   try {
@@ -18,6 +17,7 @@ function Food() {
         address,
         prevPrice,
         saledPrice,
+        count,
         ampm,
         deadlineHours,
         deadlineMinutes,
@@ -35,6 +35,7 @@ function Food() {
       addressClass,
       prevPriceClass,
       saledPriceClass,
+      countClass,
       deadlineClass1,
       deadlineClass2,
     } = styles;
@@ -63,6 +64,9 @@ function Food() {
               <div className={`${detail} ${saledPriceClass}`}>
                 할인가 : {Number(`${saledPrice}`).toLocaleString("en")}원
               </div>
+              <div className={`${detail} ${countClass}`}>
+                개수 : {Number(`${count}`).toLocaleString("en")}
+              </div>
               <div>
                 <span className={`${deadlineClass1}`}>마감시간 : </span>
                 <span
@@ -79,6 +83,7 @@ function Food() {
           address={address}
           prevPrice={prevPrice}
           saledPrice={saledPrice}
+          count={count}
           ampm={ampm}
           deadlineHours={deadlineHours}
           deadlineMinutes={deadlineMinutes}

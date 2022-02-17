@@ -12,6 +12,7 @@ function Item({
   address,
   prevPrice,
   saledPrice,
+  count,
   ampm,
   deadlineHours,
   deadlineMinutes,
@@ -28,6 +29,7 @@ function Item({
     addressClass,
     prevPriceClass,
     saledPriceClass,
+    countClass,
     deadlineClass,
   } = styles;
 
@@ -41,6 +43,7 @@ function Item({
         address,
         prevPrice,
         saledPrice,
+        count,
         ampm,
         deadlineHours,
         deadlineMinutes,
@@ -63,6 +66,9 @@ function Item({
                 </span>
                 <span className={`${saledPriceClass}`}>
                   할인가 : {Number(`${saledPrice}`).toLocaleString("en")}원
+                </span>
+                <span className={`${countClass}`}>
+                  개수 : {Number(`${count}`).toLocaleString("en")}
                 </span>
                 <span className={`${deadlineClass}`}>
                   마감시간 : {`${ampm} ${deadlineHours}:${deadlineMinutes}`}

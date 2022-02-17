@@ -72,10 +72,17 @@
   height: 1.66rem;
   margin-top: 0.125rem;
 }
+
+/* 개수에 속성부여 */
+.countClass {
+  color: black;
+  font-size: 0.625rem;
+  font-weight: 400;
+}
+
 /* 마감시간에 속성부여 */
 .deadlineClass {
   color: black;
   font-size: 0.625rem;
   font-weight: 400;
-  margin-top: 0.52rem;
 }

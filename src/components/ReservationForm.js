@@ -12,6 +12,7 @@ function ReservationForm({
   address,
   prevPrice,
   saledPrice,
+  count,
   ampm,
   deadlineHours,
   deadlineMinutes,
@@ -24,8 +25,10 @@ function ReservationForm({
     submitBtn,
     phoneNum,
     pickupT,
+    countClass,
   } = styles;
   const [phone, setPhone] = useState("");
+  const [countNum, setCountNum] = useState("");
   const [time, setTime] = useState("");
   const formRef = useRef();
 
@@ -47,6 +50,7 @@ function ReservationForm({
         address,
         prevPrice,
         saledPrice,
+        count,
         ampm,
         deadlineHours,
         deadlineMinutes,
@@ -62,12 +66,30 @@ function ReservationForm({
   const onChange = (event) => {
     if (event.target.id === "phone") {
       setPhone(event.target.value);
+    } else if (event.target.id === "count") {
+      setCountNum(event.target.value);
     }
   };
 
   return (
     <Container>
       <Form onSubmit={onSubmit} className={reservationForm}>
+        <Form.Group>
+          <Form.Label htmlFor="count">
+            <div>예약하실 상품의 개수를 입력해주세요 (최대 {count} 개)</div>
+            <input
+              required
+              id="count"
+              type="number"
+              placeholder="개수"
+              className={countClass}
+              value={countNum}
+              onChange={onChange}
+              max={Number(count)}
+            />
+            <span> 개</span>
+          </Form.Label>
+        </Form.Group>
         <Form.Group>
           <Form.Label htmlFor="phone">
             <div className={phoneNum}>
@@ -95,6 +117,11 @@ function ReservationForm({
           </Form.Label>
         </Form.Group>
         <Form.Group>
+          <Form.Label htmlFor="time">
+            <span>가격 : {Number(count) * saledPrice}</span>
+          </Form.Label>
+        </Form.Group>
+        <Form.Group>
           <input
             type="submit"
             className={submitBtn}
@@ -118,6 +145,7 @@ function ReservationForm({
         <input type="hidden" name="address" value={address} />
         <input type="hidden" name="prevPrice" value={prevPrice} />
         <input type="hidden" name="saledPrice" value={saledPrice} />
+        <input type="hidden" name="count" value={count} />
         <input type="hidden" name="ampm" value={ampm} />
         <input type="hidden" name="deadlineHours" value={deadlineHours} />
         <input type="hidden" name="deadlineMinutes" value={deadlineMinutes} />
