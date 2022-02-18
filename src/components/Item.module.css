@@ -28,7 +28,19 @@
   background-color: white;
   flex-direction: column;
 }
-
+@media (min-width: 40rem) {
+  .details {
+    padding: 0.33rem;
+    padding-left: 1.85rem;
+    padding-top: 0rem;
+    width: 20rem;
+    min-width: 11.2rem;
+    height: 9.5rem;
+    display: flex;
+    background-color: white;
+    flex-direction: column;
+  }
+}
 /* 아래부터 게시물의 font속성부여 */
 .menuClass {
   color: black;
