@@ -68,7 +68,7 @@ function Item({
                   할인가 : {Number(`${saledPrice}`).toLocaleString("en")}원
                 </span>
                 <span className={`${countClass}`}>
-                  개수 : {Number(`${count}`).toLocaleString("en")}
+                  주문 가능 개수 : {Number(`${count}`).toLocaleString("en")}
                 </span>
                 <span className={`${deadlineClass}`}>
                   마감시간 : {`${ampm} ${deadlineHours}:${deadlineMinutes}`}
