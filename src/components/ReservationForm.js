@@ -138,12 +138,12 @@ function ReservationForm({
       <Form
         hidden
         id="submittingForm"
-        name="reservation"
+        name="contact"
         method="POST"
         data-netlify="true"
         ref={formRef}
       >
-        <input type="hidden" name="form-name" value="reservation" />
+        <input type="hidden" name="form-name" value="contact" />
         <input type="hidden" name="id" value={id} />
         <input type="hidden" name="menu" value={menu} />
         <input type="hidden" name="place" value={place} />
