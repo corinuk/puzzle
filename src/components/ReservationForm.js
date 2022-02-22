@@ -41,7 +41,7 @@ function ReservationForm({
       const createdAt_order = Date.now();
       await addDoc(collection(dbService, "orders"), {
         id,
-        count,
+        countNum,
         createdAt,
         createdAt_order,
       });
@@ -51,7 +51,7 @@ function ReservationForm({
         address,
         prevPrice,
         saledPrice,
-        count,
+        countNum,
         ampm,
         deadlineHours,
         deadlineMinutes,
@@ -150,7 +150,7 @@ function ReservationForm({
         <input type="hidden" name="address" value={address} />
         <input type="hidden" name="prevPrice" value={prevPrice} />
         <input type="hidden" name="saledPrice" value={saledPrice} />
-        <input type="hidden" name="count" value={count} />
+        <input type="hidden" name="countNum" value={countNum} />
         <input type="hidden" name="ampm" value={ampm} />
         <input type="hidden" name="deadlineHours" value={deadlineHours} />
         <input type="hidden" name="deadlineMinutes" value={deadlineMinutes} />
