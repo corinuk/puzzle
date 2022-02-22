@@ -41,6 +41,7 @@ function ReservationForm({
       const createdAt_order = Date.now();
       await addDoc(collection(dbService, "orders"), {
         id,
+        count,
         createdAt,
         createdAt_order,
       });
